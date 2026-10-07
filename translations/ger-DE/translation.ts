@@ -402,6 +402,26 @@
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>First name</source>
+        <translation>Vorname</translation>
+    </message>
+    <message>
+        <source>Last name</source>
+        <translation>Nachname</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>Signatur</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Bild</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in</source>
+        <translation>Zweistufige Anmeldung</translation>
+    </message>
 </context>
 <context>
     <name>design/starter/full</name>
