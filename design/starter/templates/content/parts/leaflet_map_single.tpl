@@ -1,6 +1,7 @@
 {* A Leaflet map with one marker at the location field of a node (v2: cjw_app/parts/leaflet_map_single.html.twig).
    Zoom levels and the tile layer come from cjw_jumper.ini [Leaflet] (v2: cjwsite.leaflet.*); the tile layer is
-   a module path of the current siteaccess on the current host (v2: a path on the host).
+   a module path of the current siteaccess, relative to the host (v2 writes the host in front; an absolute URL
+   here would be kept in the view cache that Apache and Velocity share and send one server's visitors to the other).
    The statements end in semicolons (v2 relies on line breaks, which the template engine drops after {rdelim}).
    Input: lm_node, the node with the ezgmaplocation field "location". *}
 {if and( is_set( $lm_node.data_map.location ), $lm_node.data_map.location.has_content )}
@@ -38,7 +39,7 @@
 
                 markerOptions = {ldelim} 'icon': markerIcon {rdelim};
 
-                L.tileLayer( "{ezini( 'Leaflet', 'TileLayer', 'cjw_jumper.ini' )|ezurl( 'no', 'full' )}?x={ldelim}x{rdelim}{ldelim}and{rdelim}y={ldelim}y{rdelim}{ldelim}and{rdelim}z={ldelim}z{rdelim}", {ldelim}
+                L.tileLayer( "{ezini( 'Leaflet', 'TileLayer', 'cjw_jumper.ini' )|ezurl( 'no' )}?x={ldelim}x{rdelim}{ldelim}and{rdelim}y={ldelim}y{rdelim}{ldelim}and{rdelim}z={ldelim}z{rdelim}", {ldelim}
                     and: '&',
                     attribution: '&copy; <a href="http://openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
                     minZoom: {ezini( 'Leaflet', 'MinZoom', 'cjw_jumper.ini' )},
