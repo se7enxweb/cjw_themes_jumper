@@ -7,4 +7,10 @@
 # the design strings of "starter" (translations/<locale>/translation.ts)
 TranslationExtensions[]=cjw_themes_jumper
 
+# W5 search: content/search.tpl of the design runs the search itself, limited to
+# the siteaccess's content tree ([NodeSettings] RootNode), and reads v2's
+# addresses (searchText, page) as well as the kernel's.
+[SearchSettings]
+SearchViewHandling=template
+
 */ ?>
