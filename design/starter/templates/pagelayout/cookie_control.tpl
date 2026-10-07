@@ -25,17 +25,17 @@
    choice is recorded under (default 1): raise it and every visitor is asked
    again. Keep it the same on every siteaccess of one host, because the
    consent cookie is shared by all of them (Path=/). *}
-{def $cc_node = cond( ezini_hasvariable( 'SiteInfo', 'CookiePolicyID', 'menu.ini' ),
-                      fetch( 'content', 'node',
-                             hash( 'node_id', ezini( 'SiteInfo', 'CookiePolicyID', 'menu.ini' ) ) ),
-                      false() )}
+{def $cc_node = false()}
+{if and( ezini_hasvariable( 'SiteInfo', 'CookiePolicyID', 'menu.ini' ), ezini( 'SiteInfo', 'CookiePolicyID', 'menu.ini' )|ne( '' ) )}
+    {set $cc_node = fetch( 'content', 'node', hash( 'node_id', ezini( 'SiteInfo', 'CookiePolicyID', 'menu.ini' ) ) )}
+{/if}
 {def $cc_policy_link = cond( is_object( $cc_node ),
                              concat( '<a href="', $cc_node|site_url|wash, '">',
                                      'Cookie Policy'|i18n('design/starter/cookieconsent'), '</a>' ),
                              'Cookie Policy'|i18n('design/starter/cookieconsent') )}
-{def $cc_version = cond( ezini_hasvariable( 'SiteInfo', 'CookieConsentVersion', 'menu.ini' ),
-                         ezini( 'SiteInfo', 'CookieConsentVersion', 'menu.ini' ),
-                         '1' )}
+{* {if} rather than cond(): cond() evaluates every argument, so ezini() would report a missing setting *}
+{def $cc_version = '1'}
+{if ezini_hasvariable( 'SiteInfo', 'CookieConsentVersion', 'menu.ini' )}{set $cc_version = ezini( 'SiteInfo', 'CookieConsentVersion', 'menu.ini' )}{/if}
 
 <script type="application/json" id="exp-cc-config">{json_encode( hash( 'version', $cc_version ) )}</script>
 
