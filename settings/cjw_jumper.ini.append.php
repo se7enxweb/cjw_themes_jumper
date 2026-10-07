@@ -61,6 +61,17 @@ ClassIdentifiers[]=ng_category
 ClassIdentifiers[]=cjw_feedback_form
 # Characters of the last item before it is shortened (v2: truncate(15)).
 LastItemLength=15
+# Pages of these classes show no breadcrumb, although their layout has the
+# breadcrumb block: v2 draws it only from the full view templates of its own
+# theme, so the front page and the showcase pages of these classes have none.
+# Module pages (user, errors, search) never show one either.
+HiddenOnClasses[]
+HiddenOnClasses[]=ng_frontpage
+HiddenOnClasses[]=ng_banner
+HiddenOnClasses[]=ng_blog_post
+HiddenOnClasses[]=ng_feedback_form
+HiddenOnClasses[]=ng_recipe
+HiddenOnClasses[]=image
 
 [LayoutSettings]
 # Layouts the design renders: a resolved explayouts layout is used only when
@@ -74,6 +85,10 @@ LayoutTypes[]
 LayoutTypes[]=layout_1
 LayoutTypes[]=layout_2
 LayoutTypes[]=layout_4
+# Module views v2 draws without any layout: header, #main, pre-footer and
+# footer directly in the page (v2's search page).
+PlainModuleViews[]
+PlainModuleViews[]=content/search
 # tpl_block blocks this design draws, by block name (v2 twig_block names);
 # templates in explayouts/tpl_block/<name>.tpl. Others draw nothing.
 TplBlockNames[]

@@ -14,7 +14,19 @@
    $pl_layout      the layout drawn: the explayouts layout that applies to the page when it is one of this
                    design's ([LayoutSettings] LayoutNamePrefixes, LayoutTypes), else the chrome layout below *}
 {def $pl_site_name = ezini( 'SiteSettings', 'SiteName', 'site.ini' )
-     $pl_node = false()}
+     $pl_node = false()
+     $pl_site_info = fetch( 'content', 'node', hash( 'remote_id', ezini( 'SiteInfo', 'NodeRemoteID', 'cjw_jumper.ini' ) ) )
+     $pl_module = module_params()
+     $pl_plain = false()}
+{* v2 names the site by its site info object (site_name): "JAC Example" *}
+{if and( $pl_site_info, is_set( $pl_site_info.data_map.site_name ), $pl_site_info.data_map.site_name.has_content )}
+    {set $pl_site_name = $pl_site_info.data_map.site_name.content}
+{/if}
+{* Module views v2 draws without a layout ([LayoutSettings] PlainModuleViews, e.g. content/search) *}
+{if and( is_set( $pl_module.module_name ), is_set( $pl_module.function_name ),
+         ezini( 'LayoutSettings', 'PlainModuleViews', 'cjw_jumper.ini' )|contains( concat( $pl_module.module_name, '/', $pl_module.function_name ) ) )}
+    {set $pl_plain = true()}
+{/if}
 {if and( is_array( $module_result.content_info ), is_set( $module_result.content_info.node_id ), $module_result.content_info.node_id|gt( 0 ) )}
     {set $pl_node = fetch( 'content', 'node', hash( 'node_id', $module_result.content_info.node_id ) )}
 {/if}
@@ -51,7 +63,7 @@
                 hash( 'id', 'chrome-breadcrumb', 'parent_id', 0, 'definition_identifier', 'tpl_block', 'view_type', 'tpl_block', 'parameters', hash( 'block_name', 'breadcrumb' ) ) ) ),
             hash( 'identifier', 'post_header', 'blocks', array() ),
             hash( 'identifier', 'main', 'blocks', array(
-                hash( 'id', 'chrome-main', 'parent_id', 0, 'definition_identifier', 'full_view', 'view_type', 'full_view', 'parameters', hash() ) ) ),
+                hash( 'id', 'chrome-main', 'parent_id', 0, 'definition_identifier', 'full_view', 'view_type', 'full_view', 'parameters', hash( 'set_container', true() ) ) ) ),
             hash( 'identifier', 'pre_footer', 'blocks', array() ),
             hash( 'identifier', 'footer', 'blocks', array(
                 hash( 'id', 'chrome-pre-footer', 'parent_id', 0, 'definition_identifier', 'two_columns', 'view_type', 'two_columns_50_50', 'parameters', hash( 'css_class', 'pre-footer', 'set_container', true() ) ),
@@ -70,7 +82,20 @@
 <body>
 
 <div id="page"{if $pl_is_landing} class="landing"{/if}>
+{if $pl_plain}
+{* v2's page layout without a layout (themes/cjw_app/pagelayout.html.twig, block layout): header, #main,
+   pre-footer and footer directly in #page, no zones and no breadcrumb *}
+{include uri='design:pagelayout/header.tpl'}
+
+        <div id="main" class="clearfix">
+{$module_result.content}
+        </div>
+
+{include uri='design:pagelayout/pre_footer.tpl'}
+{include uri='design:pagelayout/footer.tpl'}
+{else}
 {include uri='design:explayouts/layout.tpl' layout=$pl_layout}
+{/if}
 </div>
 
 <div id="user-basket">
