@@ -2,6 +2,9 @@
 
 # Read only in the siteaccesses that activate this extension with
 # ActiveAccessExtensions[]=cjw_themes_jumper (starter, starter_ger).
-# Empty for now: the port adds the design's access-only settings here.
+
+[RegionalSettings]
+# the design strings of "starter" (translations/<locale>/translation.ts)
+TranslationExtensions[]=cjw_themes_jumper
 
 */ ?>

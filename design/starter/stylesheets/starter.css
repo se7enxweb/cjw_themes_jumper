@@ -1,0 +1,8 @@
+/* Additions of the Exponential port to the v2 stylesheets (which stay unchanged): only what v2 does not have.
+   - the language switcher (new; v2 has none)
+   - the cookie banner of alpha (exp-cookie-consent.css), fitted to the starter's colours and font */
+
+/* Cookie banner: the starter's font and its blue */
+.exp-cc {
+  font-family: "Open Sans", sans-serif;
+}
