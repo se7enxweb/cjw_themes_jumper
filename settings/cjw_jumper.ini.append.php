@@ -99,6 +99,11 @@ Classes[]=ng_category
 Classes[]=ng_landing_page
 Classes[]=ng_container
 Classes[]=ng_frontpage
+Classes[]=ng_blog_post
+Classes[]=ng_recipe
+Classes[]=ng_gallery
+Classes[]=ng_htmlbox
+Classes[]=tmv_container
 
 [Leaflet]
 # The map of a location field (v2: cjwsite.default.leaflet.*). TileLayer is a
