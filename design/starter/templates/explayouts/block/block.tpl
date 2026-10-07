@@ -1,6 +1,6 @@
 {* The wrapper of every block (v2: nglayouts/themes/app/block/block.html.twig): class "ngl-block ngl-<definition>
    ngl-vt-<view type> <css class>" (v2 leaves a space at the end when the css class is empty, kept), the
-   vertical whitespace and background classes, the optional container. As in v2, a block whose content is
+   background class, the optional container (no whitespace classes, as in v2). As in v2, a block whose content is
    empty is not drawn at all. tpl_block blocks are v2's twig_block blocks and carry v2's class names.
    The content comes from explayouts/block/<definition>.tpl.
 
@@ -25,9 +25,8 @@
 {def $bk_classes = concat( 'ngl-block ngl-', cond( $bk_def|eq( 'tpl_block' ), 'twig_block', $bk_def ),
                            ' ngl-vt-', cond( $bk_vt|eq( 'tpl_block' ), 'twig_block', $bk_vt ), ' ', $bk_css_pre, first_set( $bk_params.css_class, '' ) )}
 {undef $bk_css_pre}
-{if and( first_set( $bk_params['vertical_whitespace:enabled'], false() ), first_set( $bk_params['vertical_whitespace:position'], '' )|ne( '' ), first_set( $bk_params['vertical_whitespace:size'], '' )|ne( '' ) )}
-    {set $bk_classes = concat( $bk_classes, ' whitespace-', $bk_params['vertical_whitespace:position'], ' whitespace-', $bk_params['vertical_whitespace:size'] )}
-{/if}
+{* No whitespace classes: v2 prints none on any page (its block definitions do not define the wrapper's
+   vertical_whitespace:position/size, which the import keeps only as stored values), and app.css is v2's. *}
 {if and( first_set( $bk_params['background_color:enabled'], false() ), first_set( $bk_params['background_color:color'], '' )|ne( '' ) )}
     {set $bk_classes = concat( $bk_classes, ' bg-color-', $bk_params['background_color:color'] )}
 {/if}
