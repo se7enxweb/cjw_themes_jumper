@@ -34,4 +34,36 @@ Match[class_identifier]=ng_news
 # --- end of full views ---------------------------------------------------------
 
 
+# --- W5 forms and W5 video and audio ---------------------------------------------
+# The feedback forms (v2 cjw_feedback_form, ng_feedback_form; sent to the
+# information collector, collect.ini) and the video and audio pages (ng_video
+# with the click-to-load YouTube player, ng_audio). Each override file only
+# includes content/full/<class>.tpl, as the full views of wave 4 do.
+
+[full_starter_cjw_feedback_form]
+Source=node/view/full.tpl
+MatchFile=full/cjw_feedback_form.tpl
+Subdir=templates
+Match[class_identifier]=cjw_feedback_form
+
+[full_starter_ng_feedback_form]
+Source=node/view/full.tpl
+MatchFile=full/ng_feedback_form.tpl
+Subdir=templates
+Match[class_identifier]=ng_feedback_form
+
+[full_starter_ng_video]
+Source=node/view/full.tpl
+MatchFile=full/ng_video.tpl
+Subdir=templates
+Match[class_identifier]=ng_video
+
+[full_starter_ng_audio]
+Source=node/view/full.tpl
+MatchFile=full/ng_audio.tpl
+Subdir=templates
+Match[class_identifier]=ng_audio
+
+# --- end of W5 forms and W5 video and audio --------------------------------------
+
 */ ?>

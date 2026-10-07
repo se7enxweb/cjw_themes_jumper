@@ -106,4 +106,15 @@ TileLayer=osm_proxy/tiles/(get)/1
 # --- end of full views ---------------------------------------------------------
 
 
+# --- W5 forms and W5 video and audio ---------------------------------------------
+# The full views of the feedback forms, the video and the audio class
+# (content/full/<class>.tpl), added to the list above (no reset here). The
+# contact form page draws its parts through the tpl blocks of its layout.
+[FullViews]
+Classes[]=cjw_feedback_form
+Classes[]=ng_feedback_form
+Classes[]=ng_video
+Classes[]=ng_audio
+# --- end of W5 forms and W5 video and audio --------------------------------------
+
 */ ?>

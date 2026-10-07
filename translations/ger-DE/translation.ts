@@ -474,4 +474,74 @@
         <translation>Herunterladen</translation>
     </message>
 </context>
+<context>
+    <name>design/starter/form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Senden</translation>
+    </message>
+    <message>
+        <source>Required fields</source>
+        <translation>Pflichtfelder</translation>
+    </message>
+    <message>
+        <source>Thank you for your feedback.</source>
+        <translation>Vielen Dank für Ihr Feedback.</translation>
+    </message>
+    <message>
+        <source>Return to site</source>
+        <translation>Zurück zur Startseite</translation>
+    </message>
+    <message>
+        <source>Enter a valid value</source>
+        <translation>Geben Sie einen gültigen Wert an</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>Please note</source>
+        <translation>Bitte beachten Sie</translation>
+    </message>
+    <message>
+        <source>This is an automatically generated e-mail. Please do not reply to it. Visit %site_url for more information and ways to contact us.</source>
+        <translation>Das ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht hierauf. Besuchen Sie %site_url für mehr Informationen und Kontaktmöglichkeiten.</translation>
+    </message>
+</context>
+<context>
+    <name>design/starter/media</name>
+    <message>
+        <source>Playing this video loads it from YouTube (Google). See our %privacy_link.</source>
+        <translation>Beim Abspielen wird dieses Video von YouTube (Google) geladen. Siehe unsere %privacy_link.</translation>
+    </message>
+    <message>
+        <source>Privacy policy</source>
+        <translation>Datenschutzerklärung</translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation>Video abspielen</translation>
+    </message>
+    <message>
+        <source>Play video: %title</source>
+        <translation>Video abspielen: %title</translation>
+    </message>
+    <message>
+        <source>Always allow YouTube videos on this site</source>
+        <translation>YouTube-Videos auf dieser Website immer erlauben</translation>
+    </message>
+    <message>
+        <source>Stop loading YouTube automatically</source>
+        <translation>YouTube nicht mehr automatisch laden</translation>
+    </message>
+    <message>
+        <source>YouTube video</source>
+        <translation>YouTube-Video</translation>
+    </message>
+</context>
 </TS>
