@@ -76,5 +76,34 @@ TplBlockNames[]=header
 TplBlockNames[]=breadcrumb
 TplBlockNames[]=pre_footer
 TplBlockNames[]=footer
+# The parts of the full views (wave 4), drawn from content/full/<class>.tpl
+# of the page's node ([FullViews] below).
+TplBlockNames[]=content_header
+TplBlockNames[]=title
+TplBlockNames[]=intro
+TplBlockNames[]=teaser_intro
+TplBlockNames[]=content_body
+TplBlockNames[]=body
+TplBlockNames[]=menu_right
+TplBlockNames[]=sub_menu_right
+
+# --- Full views (wave 4) -------------------------------------------------------
+[FullViews]
+# Classes with a full view template content/full/<class>.tpl. A tpl block of a
+# full view part (title, intro, content_body ...) draws the part from the
+# template of the page node's class; a class not listed draws nothing.
+Classes[]
+Classes[]=ng_article
+Classes[]=ng_news
+
+[Leaflet]
+# The map of a location field (v2: cjwsite.default.leaflet.*). TileLayer is a
+# path on the current host (v2: osm_proxy/tiles/(get)/1, served by cjw_osm_proxy).
+InitialZoom=14
+MinZoom=14
+MaxZoom=16
+TileLayer=osm_proxy/tiles/(get)/1
+# --- end of full views ---------------------------------------------------------
+
 
 */ ?>

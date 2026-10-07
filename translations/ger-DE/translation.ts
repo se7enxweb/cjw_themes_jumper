@@ -403,4 +403,55 @@
         <translation>Abbrechen</translation>
     </message>
 </context>
+<context>
+    <name>design/starter/full</name>
+    <message>
+        <source>Map:</source>
+        <translation>Karte:</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <translation>Kal</translation>
+    </message>
+    <message>
+        <source>fat</source>
+        <translation>Fett</translation>
+    </message>
+    <message>
+        <source>carbs</source>
+        <translation>Kohl</translation>
+    </message>
+    <message>
+        <source>protein</source>
+        <translation>Prot</translation>
+    </message>
+    <message>
+        <source>Preparation time</source>
+        <translation>Zubereitungszeit</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>Min</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Senden</translation>
+    </message>
+    <message>
+        <source>Required fields</source>
+        <translation>Pflichtfelder</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+</context>
 </TS>

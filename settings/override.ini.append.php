@@ -14,4 +14,24 @@ Subdir=templates
 Match[remote_id]=cjw-starter-o-root
 Priority=0
 
+# --- Full views (wave 4) -------------------------------------------------------
+# The full view of each content class the v2 starter site shows. Each override
+# file only includes content/full/<class>.tpl, which the tpl blocks of the
+# layouts draw their parts from (title, intro, content_body ...).
+
+[full_starter_ng_article]
+Source=node/view/full.tpl
+MatchFile=full/ng_article.tpl
+Subdir=templates
+Match[class_identifier]=ng_article
+
+[full_starter_ng_news]
+Source=node/view/full.tpl
+MatchFile=full/ng_news.tpl
+Subdir=templates
+Match[class_identifier]=ng_news
+
+# --- end of full views ---------------------------------------------------------
+
+
 */ ?>
