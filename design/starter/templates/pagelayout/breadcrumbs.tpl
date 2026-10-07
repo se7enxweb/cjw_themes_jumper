@@ -1,7 +1,7 @@
 {* The breadcrumb (v2: themes/cjw_app/page_path.html.twig): "Start" (the root of the site), then the pages
    between the root and this one whose class is listed in cjw_jumper.ini [Breadcrumb] ClassIdentifiers, the last
-   one shortened and not linked. Not on landing pages (v2 shows none there). *}
-{if and( $pl_node, $pl_is_landing|not )}
+   one shortened and not linked. Not on the front page ([Header] LargeHeaderClasses; v2 shows none there). *}
+{if and( $pl_node, $pl_large_header|not )}
 {def $bc_classes = ezini( 'Breadcrumb', 'ClassIdentifiers', 'cjw_jumper.ini' )
      $bc_items = array()}
 {foreach $pl_node.path as $bc_node}{if $bc_node.depth|gt( $pl_root_depth )}{set $bc_items = $bc_items|append( $bc_node )}{/if}{/foreach}

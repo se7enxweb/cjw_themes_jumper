@@ -32,7 +32,7 @@
         {/foreach}
     {/if}
     {if $hd_image|eq( '' )}
-        {set $hd_image = cond( $pl_is_landing, ezini( 'Header', 'FallbackImageLanding', 'cjw_jumper.ini' ), ezini( 'Header', 'FallbackImage', 'cjw_jumper.ini' ) )|ezimage( 'no' )}
+        {set $hd_image = cond( $pl_large_header, ezini( 'Header', 'FallbackImageLanding', 'cjw_jumper.ini' ), ezini( 'Header', 'FallbackImage', 'cjw_jumper.ini' ) )|ezimage( 'no' )}
     {/if}
 {/if}
         <header class="site-header">
@@ -40,7 +40,7 @@
 {include uri='design:pagelayout/header/base_menu.tpl'}
             </div>
     <div class="container-fluid">
-        <div class="background-container{if $pl_is_landing} large{/if}"
+        <div class="background-container{if $pl_large_header} large{/if}"
              {if $hd_banners|count|lt( 2 )}style="background-image: url({$hd_image})"{/if}>
 
 {if $hd_shortcut}

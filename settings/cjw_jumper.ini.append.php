@@ -24,10 +24,15 @@ HeadImageClasses[]=cjw_banner_head
 # Header image when no page on the way up to the root has one (design images).
 FallbackImage=header_images/wieck_kopf_folge_bootwieck.jpg
 FallbackImageLanding=header_images/wieck_kopf_start_hafen.jpg
-# Classes that get the large header and no breadcrumb (v2: <div id="page" class="landing">).
+# Classes whose page is marked as a landing page (v2: <div id="page" class="landing">).
 LandingClasses[]
 LandingClasses[]=ng_frontpage
 LandingClasses[]=ng_landing_page
+# Classes whose page gets the large header and its own fallback image, and no
+# breadcrumb: the front page only (v2 page_header.html.twig: is_landing is
+# ng_frontpage; a landing page has the normal header and a breadcrumb).
+LargeHeaderClasses[]
+LargeHeaderClasses[]=ng_frontpage
 # Design images of the logos.
 MenuIcon=grafiken/menue.png
 NavigationLogo=logos/small.png
@@ -113,7 +118,6 @@ MinZoom=14
 MaxZoom=16
 TileLayer=osm_proxy/tiles/(get)/1
 # --- end of full views ---------------------------------------------------------
-
 
 # --- W5 forms and W5 video and audio ---------------------------------------------
 # The full views of the feedback forms, the video and the audio class

@@ -8,7 +8,9 @@
    $pl_root_node   the root node of the siteaccess ([NodeSettings] RootNode of content.ini)
    $pl_root_depth  its depth
    $pl_is_landing  the node's class is a landing class (cjw_jumper.ini [Header] LandingClasses):
-                   <div id="page" class="landing">, the large header, no breadcrumb
+                   <div id="page" class="landing">
+   $pl_large_header the node's class has the large header ([Header] LargeHeaderClasses, the front page):
+                   the large header, the landing fallback image and no breadcrumb
    $pl_layout      the layout drawn: the explayouts layout that applies to the page when it is one of this
                    design's ([LayoutSettings] LayoutNamePrefixes, LayoutTypes), else the chrome layout below *}
 {def $pl_site_name = ezini( 'SiteSettings', 'SiteName', 'site.ini' )
@@ -19,8 +21,12 @@
 {def $pl_root_node = fetch( 'content', 'node', hash( 'node_id', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) ) )}
 {def $pl_root_depth = cond( $pl_root_node, $pl_root_node.depth, 1 )
      $pl_is_landing = false()
+     $pl_large_header = false()
      $pl_layout = false()}
-{if $pl_node}{set $pl_is_landing = ezini( 'Header', 'LandingClasses', 'cjw_jumper.ini' )|contains( $pl_node.class_identifier )}{/if}
+{if $pl_node}
+    {set $pl_is_landing = ezini( 'Header', 'LandingClasses', 'cjw_jumper.ini' )|contains( $pl_node.class_identifier )
+         $pl_large_header = ezini( 'Header', 'LargeHeaderClasses', 'cjw_jumper.ini' )|contains( $pl_node.class_identifier )}
+{/if}
 
 {* A layout of this design for the full view of a node *}
 {if and( $pl_node, is_set( $module_result.content_info.viewmode ), $module_result.content_info.viewmode|eq( 'full' ) )}
