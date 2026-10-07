@@ -108,6 +108,127 @@
     </message>
 </context>
 <context>
+    <name>design/starter/full</name>
+    <message>
+        <source>Map:</source>
+        <translation>Karte:</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <translation>Kal</translation>
+    </message>
+    <message>
+        <source>fat</source>
+        <translation>Fett</translation>
+    </message>
+    <message>
+        <source>carbs</source>
+        <translation>Kohl</translation>
+    </message>
+    <message>
+        <source>protein</source>
+        <translation>Prot</translation>
+    </message>
+    <message>
+        <source>Preparation time</source>
+        <translation>Zubereitungszeit</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>Min</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Senden</translation>
+    </message>
+    <message>
+        <source>Required fields</source>
+        <translation>Pflichtfelder</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+</context>
+<context>
+    <name>design/starter/form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Senden</translation>
+    </message>
+    <message>
+        <source>Required fields</source>
+        <translation>Pflichtfelder</translation>
+    </message>
+    <message>
+        <source>Thank you for your feedback.</source>
+        <translation>Vielen Dank für Ihr Feedback.</translation>
+    </message>
+    <message>
+        <source>Return to site</source>
+        <translation>Zurück zur Startseite</translation>
+    </message>
+    <message>
+        <source>Enter a valid value</source>
+        <translation>Geben Sie einen gültigen Wert an</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>Please note</source>
+        <translation>Bitte beachten Sie</translation>
+    </message>
+    <message>
+        <source>This is an automatically generated e-mail. Please do not reply to it. Visit %site_url for more information and ways to contact us.</source>
+        <translation>Das ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht hierauf. Besuchen Sie %site_url für mehr Informationen und Kontaktmöglichkeiten.</translation>
+    </message>
+</context>
+<context>
+    <name>design/starter/media</name>
+    <message>
+        <source>Playing this video loads it from YouTube (Google). See our %privacy_link.</source>
+        <translation>Beim Abspielen wird dieses Video von YouTube (Google) geladen. Siehe unsere %privacy_link.</translation>
+    </message>
+    <message>
+        <source>Privacy policy</source>
+        <translation>Datenschutzerklärung</translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation>Video abspielen</translation>
+    </message>
+    <message>
+        <source>Play video: %title</source>
+        <translation>Video abspielen: %title</translation>
+    </message>
+    <message>
+        <source>Always allow YouTube videos on this site</source>
+        <translation>YouTube-Videos auf dieser Website immer erlauben</translation>
+    </message>
+    <message>
+        <source>Stop loading YouTube automatically</source>
+        <translation>YouTube nicht mehr automatisch laden</translation>
+    </message>
+    <message>
+        <source>YouTube video</source>
+        <translation>YouTube-Video</translation>
+    </message>
+</context>
+<context>
     <name>design/starter/error</name>
     <message>
         <source>This is a restricted area</source>
@@ -171,81 +292,6 @@
     <message>
         <source>Reduce number of keywords to get more results.</source>
         <translation>Reduzieren Sie die Anzahl der Schlüsselwörter, um mehr Ergebnisse zu erhalten.</translation>
-    </message>
-</context>
-<context>
-    <name>design/starter/classes</name>
-    <message>
-        <source>Article</source>
-        <translation>Artikel</translation>
-    </message>
-    <message>
-        <source>News</source>
-        <translation>Neuigkeiten</translation>
-    </message>
-    <message>
-        <source>Banner</source>
-        <translation>Banner</translation>
-    </message>
-    <message>
-        <source>Landing page</source>
-        <translation>Zielseite</translation>
-    </message>
-    <message>
-        <source>Gallery</source>
-        <translation>Galerie</translation>
-    </message>
-    <message>
-        <source>Container</source>
-        <translation>Ordner</translation>
-    </message>
-    <message>
-        <source>Shortcut</source>
-        <translation>Verweis</translation>
-    </message>
-    <message>
-        <source>HTML box</source>
-        <translation>HTML Block</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation>Kategorie</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation>Datei</translation>
-    </message>
-    <message>
-        <source>Image</source>
-        <translation>Bild</translation>
-    </message>
-    <message>
-        <source>Video</source>
-        <translation>Video</translation>
-    </message>
-    <message>
-        <source>Audio</source>
-        <translation>Audio</translation>
-    </message>
-    <message>
-        <source>Frontpage</source>
-        <translation>Startseite</translation>
-    </message>
-    <message>
-        <source>Feedback form</source>
-        <translation>Kontaktformular</translation>
-    </message>
-    <message>
-        <source>Blog post</source>
-        <translation>Blogeintrag</translation>
-    </message>
-    <message>
-        <source>Advanced feedback form</source>
-        <translation>Erweitertes Kontaktformular</translation>
-    </message>
-    <message>
-        <source>Recipe</source>
-        <translation>Rezept</translation>
     </message>
 </context>
 <context>
@@ -424,124 +470,78 @@
     </message>
 </context>
 <context>
-    <name>design/starter/full</name>
+    <name>design/starter/classes</name>
     <message>
-        <source>Map:</source>
-        <translation>Karte:</translation>
+        <source>Article</source>
+        <translation>Artikel</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Öffnen</translation>
+        <source>News</source>
+        <translation>Neuigkeiten</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Schließen</translation>
+        <source>Banner</source>
+        <translation>Banner</translation>
     </message>
     <message>
-        <source>cal</source>
-        <translation>Kal</translation>
+        <source>Landing page</source>
+        <translation>Zielseite</translation>
     </message>
     <message>
-        <source>fat</source>
-        <translation>Fett</translation>
+        <source>Gallery</source>
+        <translation>Galerie</translation>
     </message>
     <message>
-        <source>carbs</source>
-        <translation>Kohl</translation>
+        <source>Container</source>
+        <translation>Ordner</translation>
     </message>
     <message>
-        <source>protein</source>
-        <translation>Prot</translation>
+        <source>Shortcut</source>
+        <translation>Verweis</translation>
     </message>
     <message>
-        <source>Preparation time</source>
-        <translation>Zubereitungszeit</translation>
+        <source>HTML box</source>
+        <translation>HTML Block</translation>
     </message>
     <message>
-        <source>min</source>
-        <translation>Min</translation>
+        <source>Category</source>
+        <translation>Kategorie</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Senden</translation>
+        <source>File</source>
+        <translation>Datei</translation>
     </message>
     <message>
-        <source>Required fields</source>
-        <translation>Pflichtfelder</translation>
+        <source>Image</source>
+        <translation>Bild</translation>
     </message>
     <message>
-        <source>Download</source>
-        <translation>Herunterladen</translation>
-    </message>
-</context>
-<context>
-    <name>design/starter/form</name>
-    <message>
-        <source>Send form</source>
-        <translation>Senden</translation>
+        <source>Video</source>
+        <translation>Video</translation>
     </message>
     <message>
-        <source>Required fields</source>
-        <translation>Pflichtfelder</translation>
+        <source>Audio</source>
+        <translation>Audio</translation>
     </message>
     <message>
-        <source>Thank you for your feedback.</source>
-        <translation>Vielen Dank für Ihr Feedback.</translation>
+        <source>Frontpage</source>
+        <translation>Startseite</translation>
     </message>
     <message>
-        <source>Return to site</source>
-        <translation>Zurück zur Startseite</translation>
+        <source>Feedback form</source>
+        <translation>Kontaktformular</translation>
     </message>
     <message>
-        <source>Enter a valid value</source>
-        <translation>Geben Sie einen gültigen Wert an</translation>
+        <source>Blog post</source>
+        <translation>Blogeintrag</translation>
     </message>
     <message>
-        <source>Yes</source>
-        <translation>Ja</translation>
+        <source>Advanced feedback form</source>
+        <translation>Erweitertes Kontaktformular</translation>
     </message>
     <message>
-        <source>No</source>
-        <translation>Nein</translation>
-    </message>
-    <message>
-        <source>Please note</source>
-        <translation>Bitte beachten Sie</translation>
-    </message>
-    <message>
-        <source>This is an automatically generated e-mail. Please do not reply to it. Visit %site_url for more information and ways to contact us.</source>
-        <translation>Das ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht hierauf. Besuchen Sie %site_url für mehr Informationen und Kontaktmöglichkeiten.</translation>
-    </message>
-</context>
-<context>
-    <name>design/starter/media</name>
-    <message>
-        <source>Playing this video loads it from YouTube (Google). See our %privacy_link.</source>
-        <translation>Beim Abspielen wird dieses Video von YouTube (Google) geladen. Siehe unsere %privacy_link.</translation>
-    </message>
-    <message>
-        <source>Privacy policy</source>
-        <translation>Datenschutzerklärung</translation>
-    </message>
-    <message>
-        <source>Play video</source>
-        <translation>Video abspielen</translation>
-    </message>
-    <message>
-        <source>Play video: %title</source>
-        <translation>Video abspielen: %title</translation>
-    </message>
-    <message>
-        <source>Always allow YouTube videos on this site</source>
-        <translation>YouTube-Videos auf dieser Website immer erlauben</translation>
-    </message>
-    <message>
-        <source>Stop loading YouTube automatically</source>
-        <translation>YouTube nicht mehr automatisch laden</translation>
-    </message>
-    <message>
-        <source>YouTube video</source>
-        <translation>YouTube-Video</translation>
+        <source>Recipe</source>
+        <translation>Rezept</translation>
     </message>
 </context>
 <context>

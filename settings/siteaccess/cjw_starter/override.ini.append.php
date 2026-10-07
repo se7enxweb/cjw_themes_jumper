@@ -144,7 +144,6 @@ Match[class_identifier]=image
 
 # --- end of full views ---------------------------------------------------------
 
-
 # --- W5 forms and W5 video and audio ---------------------------------------------
 # The feedback forms (v2 cjw_feedback_form, ng_feedback_form; sent to the
 # information collector, collect.ini) and the video and audio pages (ng_video
