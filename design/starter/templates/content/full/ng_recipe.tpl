@@ -1,4 +1,5 @@
-{* Full view of ng_recipe (v2: app/content/full/ng_recipe.html.twig). v2's structured data block (JSON-LD in the
+{* Full view of ng_recipe (v2: app/content/full/ng_recipe.html.twig). The space between a value and its label
+   is written as an entity: Velocity drops whitespace that stands between two tags. v2's structured data block (JSON-LD in the
    page head) is not drawn. part = 'content' (the whole view) or the Twig block names article_header, image,
    body, recipe_info; other names draw nothing. Input: node, part. *}
 {def $fr_part = first_set( $part, 'content' )
@@ -50,13 +51,13 @@
 
                         <ul class="recipe-serving-info">
                             {if $fr_map.serving_fat.has_content}
-                                <li><span class="ezinteger-field">{$fr_map.serving_fat.content}</span> <span class="tt">{'fat'|i18n( 'design/starter/full' )}</span></li>
+                                <li><span class="ezinteger-field">{$fr_map.serving_fat.content}</span>&#32;<span class="tt">{'fat'|i18n( 'design/starter/full' )}</span></li>
                             {/if}
                             {if $fr_map.serving_carbohydrates.has_content}
-                                <li><span class="ezinteger-field">{$fr_map.serving_carbohydrates.content}</span> <span class="tt">{'carbs'|i18n( 'design/starter/full' )}</span></li>
+                                <li><span class="ezinteger-field">{$fr_map.serving_carbohydrates.content}</span>&#32;<span class="tt">{'carbs'|i18n( 'design/starter/full' )}</span></li>
                             {/if}
                             {if $fr_map.serving_protein.has_content}
-                                <li><span class="ezinteger-field">{$fr_map.serving_protein.content}</span> <span class="tt">{'protein'|i18n( 'design/starter/full' )}</span></li>
+                                <li><span class="ezinteger-field">{$fr_map.serving_protein.content}</span>&#32;<span class="tt">{'protein'|i18n( 'design/starter/full' )}</span></li>
                             {/if}
                         </ul>
 

@@ -19,7 +19,7 @@
                             By
                             {foreach $ah_map.authors.content.relation_list as $ah_rel}
                                 {def $ah_author = fetch( 'content', 'object', hash( 'object_id', $ah_rel.contentobject_id ) )}
-                                {if $ah_author}<a href={$ah_author.main_node.url_alias|ezurl} class="article-author">{$ah_author.name|wash}</a>{/if}
+                                {if $ah_author}<a href={$ah_author.main_node.url_alias|ezurl} class="article-author">{$ah_author.name|wash}</a>&#32;{/if}
                                 {undef $ah_author}
                             {/foreach}{if $ah_time} –{/if}
                         {/if}
