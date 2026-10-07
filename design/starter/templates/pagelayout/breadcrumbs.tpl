@@ -24,7 +24,7 @@
                                 <li class="breadcrumb-item inline{if $bc_last} active{else} d-none d-sm-block{/if}"
                                     {if $bc_last|not}title="{'Go to "%name"'|i18n( 'design/starter/pagelayout', '', hash( '%name', $bc_name ) )|wash}"{/if}>
 {if $bc_last}
-                                            {* v2 truncate(n) keeps n characters and adds "..."; shorten(n) counts the "..." in *}{$bc_name|shorten( ezini( 'Breadcrumb', 'LastItemLength', 'cjw_jumper.ini' )|sum( 3 ), '...' )|wash}
+                                            {* v2 truncate(n): a name longer than n characters keeps its first n and gets "..." *}{def $bc_len = ezini( 'Breadcrumb', 'LastItemLength', 'cjw_jumper.ini' )}{if $bc_name|count_chars|gt( $bc_len )}{$bc_name|extract_left( $bc_len )|wash}...{else}{$bc_name|wash}{/if}{undef $bc_len}
 {else}
                                             <a href={$bc_item.url_alias|ezurl}>{$bc_name|wash}</a>
 {/if}
