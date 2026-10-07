@@ -544,4 +544,27 @@
         <translation>YouTube-Video</translation>
     </message>
 </context>
+<context>
+    <name>design/starter/content</name>
+    <message>
+        <source>Sponsored</source>
+        <translation>Gesponsert</translation>
+    </message>
+    <message>
+        <source>Min</source>
+        <translation>Min</translation>
+    </message>
+    <message>
+        <source>Cal</source>
+        <translation>Kal</translation>
+    </message>
+    <message>
+        <source>MORE</source>
+        <translation>MEHR DAZU</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Weiterlesen</translation>
+    </message>
+</context>
 </TS>
