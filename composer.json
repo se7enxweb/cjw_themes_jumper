@@ -1,0 +1,22 @@
+{
+    "name": "se7enxweb/cjw_themes_jumper",
+    "description": "CJW Themes Jumper: the design starter for Exponential, served by the starter siteaccesses (port of the Nexus v2 starter look)",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "Exponential", "Exponential 6", "legacy extension", "design", "theme", "siteaccess", "starter" ],
+    "homepage": "https://github.com/se7enxweb/cjw_themes_jumper",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        { "name": "7x", "homepage": "https://se7enx.com", "email": "info@se7enx.com", "role": "Author" }
+    ],
+    "support": {
+        "issues": "https://github.com/se7enxweb/cjw_themes_jumper/issues",
+        "source": "https://github.com/se7enxweb/cjw_themes_jumper"
+    },
+    "require": {
+        "php": ">=8.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "cjw_themes_jumper"
+    }
+}
