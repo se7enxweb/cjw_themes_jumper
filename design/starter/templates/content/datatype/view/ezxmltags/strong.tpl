@@ -1,0 +1,1 @@
+{* Bold text as v2 writes it (eZXml2Html5_core.xsl: <strong>), not the standard design's <b>. *}<strong{if ne( $classification|trim, '' )} class="{$classification|wash}"{/if}>{$content}</strong>

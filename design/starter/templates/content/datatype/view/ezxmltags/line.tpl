@@ -1,0 +1,1 @@
+{* A line of a paragraph followed by another line: v2 separates the lines with <br> (eZXml2Html5_core.xsl). *}{$content}<br>
