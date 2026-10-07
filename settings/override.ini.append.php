@@ -31,6 +31,30 @@ MatchFile=full/ng_news.tpl
 Subdir=templates
 Match[class_identifier]=ng_news
 
+[full_starter_ng_category]
+Source=node/view/full.tpl
+MatchFile=full/ng_category.tpl
+Subdir=templates
+Match[class_identifier]=ng_category
+
+[full_starter_ng_landing_page]
+Source=node/view/full.tpl
+MatchFile=full/ng_landing_page.tpl
+Subdir=templates
+Match[class_identifier]=ng_landing_page
+
+[full_starter_ng_container]
+Source=node/view/full.tpl
+MatchFile=full/ng_container.tpl
+Subdir=templates
+Match[class_identifier]=ng_container
+
+[full_starter_ng_frontpage]
+Source=node/view/full.tpl
+MatchFile=full/ng_frontpage.tpl
+Subdir=templates
+Match[class_identifier]=ng_frontpage
+
 # --- end of full views ---------------------------------------------------------
 
 

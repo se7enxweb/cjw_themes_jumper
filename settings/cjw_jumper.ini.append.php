@@ -95,6 +95,10 @@ TplBlockNames[]=sub_menu_right
 Classes[]
 Classes[]=ng_article
 Classes[]=ng_news
+Classes[]=ng_category
+Classes[]=ng_landing_page
+Classes[]=ng_container
+Classes[]=ng_frontpage
 
 [Leaflet]
 # The map of a location field (v2: cjwsite.default.leaflet.*). TileLayer is a
