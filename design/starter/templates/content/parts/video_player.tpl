@@ -36,17 +36,20 @@
             <div class="video-container" id="video-local-{$vp_node.contentobject_id}">Loading the player ...</div>
     {/if}
 {elseif $vp_id|ne( '' )}
+    {* Nothing is loaded from a video service before the visitor asks: YouTube through the click-to-load
+       player (youtube_player.tpl, consent tied to the cookie banner); Vimeo and Dailymotion, which have no
+       consent player here, as a plain link to the video instead of v2's iframe. *}
     {if $vp_type|contains( 'vimeo' )}
-            <div class="video-vimeo embed-responsive embed-responsive-16by9">
-                <iframe frameborder="0" class="embed-responsive-item" src="https://player.vimeo.com/video/{$vp_id|wash}{if $vp_autoplay}?autoplay=1{/if}" width="770" height="433" allowfullscreen></iframe>
+            <div class="video-vimeo">
+                <a href="https://vimeo.com/{$vp_id|wash}" target="_blank" rel="noopener noreferrer">{$vp_node.name|wash}</a>
             </div>
     {elseif $vp_type|contains( 'dailymotion' )}
-            <div class="video-dailymotion embed-responsive embed-responsive-16by9">
-                <iframe frameborder="0" class="embed-responsive-item" src="https://www.dailymotion.com/embed/video/{$vp_id|wash}{if $vp_autoplay}?autoplay=1{/if}" width="770" height="433" allowfullscreen></iframe>
+            <div class="video-dailymotion">
+                <a href="https://www.dailymotion.com/video/{$vp_id|wash}" target="_blank" rel="noopener noreferrer">{$vp_node.name|wash}</a>
             </div>
     {else}
-            <div class="video-youtube embed-responsive embed-responsive-16by9">
-                <iframe frameborder="0" class="embed-responsive-item" src="https://www.youtube.com/embed/{$vp_id|wash}{if $vp_autoplay}?autoplay=1{/if}" width="770" height="433" allowfullscreen></iframe>
+            <div class="video-youtube">
+                {include uri='design:content/parts/youtube_player.tpl' yt_id=$vp_id yt_title=$vp_node.name}
             </div>
     {/if}
 {/if}
