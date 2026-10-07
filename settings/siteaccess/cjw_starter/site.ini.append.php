@@ -21,4 +21,11 @@ SearchViewHandling=template
 Listeners[]=request/input@cjwJumperFormHoneypot::input
 # --- end of W5 forms --------------------------------------------------------------
 
+# --- W3b paged list blocks ----------------------------------------------------------
+# cjw_paging/page answers the later pages of paged Layouts blocks (cjwJumperPagedCollection)
+# to everyone who may read the page the block is on; it needs no policy of its own.
+[RoleSettings]
+PolicyOmitList[]=cjw_paging/page
+# --- end of W3b paged list blocks ---------------------------------------------------
+
 */ ?>
