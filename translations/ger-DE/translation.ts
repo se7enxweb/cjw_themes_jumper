@@ -227,6 +227,10 @@
         <source>YouTube video</source>
         <translation>YouTube-Video</translation>
     </message>
+    <message>
+        <source>Your browser does not support the audio element.</source>
+        <translation>Ihr Browser unterstützt das Audio-Element nicht.</translation>
+    </message>
 </context>
 <context>
     <name>design/starter/error</name>
