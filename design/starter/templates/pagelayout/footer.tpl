@@ -28,7 +28,7 @@
 {if $ft_items|count}
                                             <ul class="nav navbar-nav">
 {foreach $ft_items as $ft_index => $ft_item}
-                <li id="menu-item-location-id-{$ft_item.node_id}" class="{if $ft_index|eq( 0 )}firstli{/if}{if $ft_index|eq( $ft_items|count|dec )}{if $ft_items|count|eq( 1 )} {/if}lastli{/if}">        <a href={$ft_item.url_alias|ezurl}>{$ft_item.name|wash}</a>        
+                <li id="menu-item-location-id-{$ft_item.node_id}" class="{if $ft_index|eq( 0 )}firstli{/if}{if $ft_index|eq( $ft_items|count|dec )}{if $ft_items|count|eq( 1 )} {/if}lastli{/if}">        <a href={$ft_item.url_alias|ezurl}>{include uri='design:parts/menu_label.tpl' label_node=$ft_item}</a>        
     </li>{if $ft_index|lt( $ft_items|count|dec )}{* the gap between the inline-block items is a space; written as an entity, because Velocity drops whitespace that stands between two tags *}&#32;{/if}
 
 {/foreach}

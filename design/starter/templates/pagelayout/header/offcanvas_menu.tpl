@@ -36,7 +36,7 @@
     <li class="nav-item">
                 <a class="nav-link"
            {if $oc_item.class_identifier|eq( 'ng_shortcut' )}{include uri='design:parts/shortcut_link_attributes.tpl' shortcut=$oc_item}{else}href={$oc_item.url_alias|ezurl}{/if}>
-            {$oc_item.name|wash}
+            {include uri='design:parts/menu_label.tpl' label_node=$oc_item}
         </a>
     </li>
 

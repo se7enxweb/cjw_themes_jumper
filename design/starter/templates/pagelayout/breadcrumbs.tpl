@@ -17,16 +17,19 @@
                             </li>
 {foreach $bc_items as $bc_index => $bc_item}
 {if $bc_classes|contains( $bc_item.class_identifier )}
-{def $bc_last = $bc_index|eq( $bc_items|count|dec )}
+{def $bc_last = $bc_index|eq( $bc_items|count|dec )
+     $bc_name = $bc_item.name}
+{* as parts/menu_label.tpl: the teaser title first, as v2 names its objects *}
+{if and( is_set( $bc_item.data_map.teaser_title ), $bc_item.data_map.teaser_title.has_content )}{set $bc_name = $bc_item.data_map.teaser_title.content}{/if}
                                 <li class="breadcrumb-item inline{if $bc_last} active{else} d-none d-sm-block{/if}"
-                                    {if $bc_last|not}title="{'Go to "%name"'|i18n( 'design/starter/pagelayout', '', hash( '%name', $bc_item.name ) )|wash}"{/if}>
+                                    {if $bc_last|not}title="{'Go to "%name"'|i18n( 'design/starter/pagelayout', '', hash( '%name', $bc_name ) )|wash}"{/if}>
 {if $bc_last}
-                                            {* v2 truncate(n) keeps n characters and adds "..."; shorten(n) counts the "..." in *}{$bc_item.name|shorten( ezini( 'Breadcrumb', 'LastItemLength', 'cjw_jumper.ini' )|sum( 3 ), '...' )|wash}
+                                            {* v2 truncate(n) keeps n characters and adds "..."; shorten(n) counts the "..." in *}{$bc_name|shorten( ezini( 'Breadcrumb', 'LastItemLength', 'cjw_jumper.ini' )|sum( 3 ), '...' )|wash}
 {else}
-                                            <a href={$bc_item.url_alias|ezurl}>{$bc_item.name|wash}</a>
+                                            <a href={$bc_item.url_alias|ezurl}>{$bc_name|wash}</a>
 {/if}
                                 </li>
-{undef $bc_last}
+{undef $bc_last $bc_name}
 {/if}
 {/foreach}
                 </ul>
