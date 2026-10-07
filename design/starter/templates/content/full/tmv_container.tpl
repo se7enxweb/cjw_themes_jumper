@@ -12,6 +12,8 @@
 {if array( 'content', 'content_body' )|contains( $ft_part )}
             <div class="container">
                 <div class="full-article-content">
+{* the events of the container, from the extension cjw_tmv when it is active (owner decision Q28) *}
+{if ezini_hasvariable( 'ContainerView', 'ShowEventList', 'cjw_tmv.ini' )}{include uri='design:cjw_tmv/container.tpl' node=$node}{/if}
                 </div>
             </div>
             <div style="clear: both"></div>
