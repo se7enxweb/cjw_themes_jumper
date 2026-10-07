@@ -1,6 +1,7 @@
 {* A Leaflet map with one marker at the location field of a node (v2: cjw_app/parts/leaflet_map_single.html.twig).
    Zoom levels and the tile layer come from cjw_jumper.ini [Leaflet] (v2: cjwsite.leaflet.*); the tile layer is
    a module path of the current siteaccess on the current host (v2: a path on the host).
+   The statements end in semicolons (v2 relies on line breaks, which the template engine drops after {rdelim}).
    Input: lm_node, the node with the ezgmaplocation field "location". *}
 {if and( is_set( $lm_node.data_map.location ), $lm_node.data_map.location.has_content )}
 {def $lm_loc = $lm_node.data_map.location.content
@@ -24,7 +25,7 @@
 
                 obj = jQuery( '#' + '{$lm_id}' );
 
-                mapOptions = {ldelim} 'zoom': {$lm_zoom}, 'center': [ obj.attr( 'data-latitude' ), obj.attr( 'data-longitude' ) ] {rdelim}
+                mapOptions = {ldelim} 'zoom': {$lm_zoom}, 'center': [ obj.attr( 'data-latitude' ), obj.attr( 'data-longitude' ) ] {rdelim};
                 map = L.map( {$lm_id}, mapOptions );
 
                 markerIcon = L.icon({ldelim} iconUrl: '{'images/grafiken/kartensymbol-allgemein.png'|ezdesign( 'no' )}',
