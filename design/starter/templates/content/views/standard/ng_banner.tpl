@@ -2,7 +2,7 @@
    as background, title linked only when the banner has a related object, the short description.
    Parameters: node, view_type. *}
 {def $sb_dm = $node.data_map
-     $sb_link = and( is_set( $sb_dm.related_object ), $sb_dm.related_object.has_content )}
+     $sb_link = or( and( is_set( $sb_dm.related_object ), $sb_dm.related_object.has_content ), and( is_set( $sb_dm.link ), $sb_dm.link.has_content ) )}
     <article
         class="view-type view-type-{first_set( $view_type, 'standard' )|wash} banner"{if and( is_set( $sb_dm.image ), $sb_dm.image.has_content )} style="background-image: url( '{$sb_dm.image.content['cjw_i1920'].url|ezroot( 'no' )}' );"{/if}>
         <div class="article-content">

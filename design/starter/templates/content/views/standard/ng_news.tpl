@@ -4,7 +4,7 @@
 {def $sn_dm = $node.data_map
      $sn_link = true()}
 {if and( is_set( $sn_dm.body ), $sn_dm.body.has_content|not )}{set $sn_link = false()}{/if}
-{if and( is_set( $sn_dm.related_object ), $sn_dm.related_object.has_content )}{set $sn_link = true()}{/if}
+{if or( and( is_set( $sn_dm.related_object ), $sn_dm.related_object.has_content ), and( is_set( $sn_dm.link ), $sn_dm.link.has_content ) )}{set $sn_link = true()}{/if}
 <article class="view-type view-type-{first_set( $view_type, 'standard' )|wash} ng-news vl1">
     {include uri='design:content/item_parts/image.tpl' ip_node=$node ip_alias='cjw_i770' ip_link=cond( $sn_link, $node.url_alias|ezurl( 'no' ), '' )}
 
