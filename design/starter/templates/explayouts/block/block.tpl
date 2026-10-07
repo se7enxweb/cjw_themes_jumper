@@ -17,8 +17,14 @@
 {def $bk_def = $bk_block.definition_identifier
      $bk_vt = first_set( $bk_block.view_type, '' )
      $bk_params = first_set( $bk_block.parameters, hash() )}
+{* Block templates: in v2 some view types put their own class before the css class (title centered/section,
+   list numbered, ezcontent_field's field-<identifier>); kept here, where v2's wrapper prints it. *}
+{def $bk_css_pre = hash( 'title_centered', 'text-center ', 'centered', 'text-center ', 'section', 'section-title ',
+                         'section_centered', 'section-title section-title-centered ', 'list_numbered', 'list-numbered ' )}
+{set $bk_css_pre = cond( $bk_def|eq( 'ezcontent_field' ), concat( 'field-', first_set( $bk_params.field_identifier, '' ), ' ' ), first_set( $bk_css_pre[$bk_vt], '' ) )}
 {def $bk_classes = concat( 'ngl-block ngl-', cond( $bk_def|eq( 'tpl_block' ), 'twig_block', $bk_def ),
-                           ' ngl-vt-', cond( $bk_vt|eq( 'tpl_block' ), 'twig_block', $bk_vt ), ' ', first_set( $bk_params.css_class, '' ) )}
+                           ' ngl-vt-', cond( $bk_vt|eq( 'tpl_block' ), 'twig_block', $bk_vt ), ' ', $bk_css_pre, first_set( $bk_params.css_class, '' ) )}
+{undef $bk_css_pre}
 {if and( first_set( $bk_params['vertical_whitespace:enabled'], false() ), first_set( $bk_params['vertical_whitespace:position'], '' )|ne( '' ), first_set( $bk_params['vertical_whitespace:size'], '' )|ne( '' ) )}
     {set $bk_classes = concat( $bk_classes, ' whitespace-', $bk_params['vertical_whitespace:position'], ' whitespace-', $bk_params['vertical_whitespace:size'] )}
 {/if}
