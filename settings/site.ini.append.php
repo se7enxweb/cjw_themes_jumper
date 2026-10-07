@@ -13,4 +13,12 @@ TranslationExtensions[]=cjw_themes_jumper
 [SearchSettings]
 SearchViewHandling=template
 
+# --- W5 forms ---------------------------------------------------------------------
+# The honeypot of the feedback forms: a submission to the information collector
+# whose hidden field CjwFormWebsite is filled in is dropped before the collector
+# runs (classes/cjwjumperformhoneypot.php).
+[Event]
+Listeners[]=request/input@cjwJumperFormHoneypot::input
+# --- end of W5 forms --------------------------------------------------------------
+
 */ ?>
