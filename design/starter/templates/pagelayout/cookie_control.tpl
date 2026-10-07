@@ -33,9 +33,11 @@
                              concat( '<a href="', $cc_node|site_url|wash, '">',
                                      'Cookie Policy'|i18n('design/starter/cookieconsent'), '</a>' ),
                              'Cookie Policy'|i18n('design/starter/cookieconsent') )}
-{* {if} rather than cond(): cond() evaluates every argument, so ezini() would report a missing setting *}
-{def $cc_version = '1'}
-{if ezini_hasvariable( 'SiteInfo', 'CookieConsentVersion', 'menu.ini' )}{set $cc_version = ezini( 'SiteInfo', 'CookieConsentVersion', 'menu.ini' )}{/if}
+{* ezini() with constant arguments is evaluated when the template is compiled, inside an {if} or a cond() alike,
+   and reports a missing setting: the setting name is passed as a variable, which defers it to the request. *}
+{def $cc_version = '1'
+     $cc_setting = 'CookieConsentVersion'}
+{if ezini_hasvariable( 'SiteInfo', $cc_setting, 'menu.ini' )}{set $cc_version = ezini( 'SiteInfo', $cc_setting, 'menu.ini' )}{/if}
 
 <script type="application/json" id="exp-cc-config">{json_encode( hash( 'version', $cc_version ) )}</script>
 
@@ -86,4 +88,4 @@
     </div>
 </section>
 
-{undef $cc_node $cc_policy_link $cc_version}
+{undef $cc_node $cc_policy_link $cc_version $cc_setting}

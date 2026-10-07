@@ -9,7 +9,8 @@
     {def $sl_link = enhanced_link( $sl_dm.link )}
     {if $sl_link}
         {set $sl_href = cond( $sl_link.absolute, $sl_link.href, cond( and( $sl_link.href|begins_with( '/' ), $sl_link.href|begins_with( '//' )|not ), $sl_link.href|ezurl( 'no' ), $sl_link.href ) )}
-        {set $sl_blank = $sl_link.target|eq( '_blank' )}
+        {* as v2: only a link to another site opens in a new tab *}
+        {set $sl_blank = or( $sl_link.absolute, $sl_link.href|begins_with( 'http' ) )}
     {/if}
     {undef $sl_link}
 {elseif and( is_set( $sl_dm.related_object ), $sl_dm.related_object.has_content, $sl_dm.related_object.content.main_node )}

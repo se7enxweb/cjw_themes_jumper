@@ -1,11 +1,14 @@
 {* The base navigation (v2: themes/cjw_app/parts/base_menu.html.twig): the offcanvas toggle, the small logo and,
    on the right, the top links (the ng_shortcut children of the folder named in cjw_jumper.ini [Header]
-   TopLinkContainerNodeRemoteID) followed by the language switcher. *}
+   TopLinkContainerNodeRemoteID) followed by the language switcher. The folder lives in the hidden
+   administration folder, so its children are invisible: visibility is ignored as v2 does, but a link that is
+   itself hidden stays out. *}
 {def $bm_container = fetch( 'content', 'node', hash( 'remote_id', ezini( 'Header', 'TopLinkContainerNodeRemoteID', 'cjw_jumper.ini' ) ) )
      $bm_links = array()}
 {if $bm_container}
     {set $bm_links = fetch( 'content', 'list', hash( 'parent_node_id', $bm_container.node_id, 'class_filter_type', 'include',
-                                                   'class_filter_array', array( 'ng_shortcut' ), 'sort_by', $bm_container.sort_array, 'limit', 10 ) )}
+                                                   'class_filter_array', array( 'ng_shortcut' ), 'sort_by', $bm_container.sort_array, 'limit', 10,
+                                                   'ignore_visibility', true() ) )}
 {/if}
 <div class="base-navigation">
 
@@ -42,14 +45,16 @@
 
         
                     <span class="top-link d-none d-md-block">
-{foreach $bm_links as $bm_index => $bm_link}
+{def $bm_shown = array()}
+{foreach $bm_links as $bm_link}{if $bm_link.is_hidden|not}{set $bm_shown = $bm_shown|append( $bm_link )}{/if}{/foreach}
+{foreach $bm_shown as $bm_index => $bm_link}
                                     {if $bm_index|gt( 0 )}|{/if}
                     <a {include uri='design:parts/shortcut_link_attributes.tpl' shortcut=$bm_link}>
                         <span class="ezstring-field">{$bm_link.data_map.title.content|wash}</span>
                     </a>
 {/foreach}
-{include uri='design:pagelayout/header/language_switcher.tpl' separator=$bm_links|count|gt( 0 ) variant='top-link'}
+{include uri='design:pagelayout/header/language_switcher.tpl' separator=$bm_shown|count|gt( 0 ) variant='top-link'}
                             </span>
             </nav>
 </div>
-{undef $bm_container $bm_links}
+{undef $bm_container $bm_links $bm_shown}
