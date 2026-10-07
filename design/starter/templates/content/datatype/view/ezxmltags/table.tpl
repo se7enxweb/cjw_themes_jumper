@@ -1,0 +1,2 @@
+{* The table tag as v2 draws it: Bootstrap's "table" class before the editor's class, the width as a style. *}
+<table class="table{if $classification|trim} {$classification|trim|wash}{/if}"{if ne( $width|trim, '' )} style="width:{$width|wash};"{/if}{if and( is_set( $summary ), $summary )} summary="{$summary|wash}"{/if}>{if and( is_set( $caption ), $caption )}<caption>{$caption|wash}</caption>{/if}{$rows}</table>
