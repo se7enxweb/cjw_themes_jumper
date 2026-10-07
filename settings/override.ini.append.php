@@ -117,6 +117,31 @@ MatchFile=full/redirect_to_root.tpl
 Subdir=templates
 Match[class_identifier]=tmv_container_categories
 
+# Embeds in rich text (ezxmltext): content/embed/<class>.tpl.
+[embed_starter_ng_gallery]
+Source=content/view/embed.tpl
+MatchFile=embed/ng_gallery.tpl
+Subdir=templates
+Match[class_identifier]=ng_gallery
+
+[embed_starter_node_ng_gallery]
+Source=node/view/embed.tpl
+MatchFile=embed/node_ng_gallery.tpl
+Subdir=templates
+Match[class_identifier]=ng_gallery
+
+[embed_starter_image]
+Source=content/view/embed.tpl
+MatchFile=embed/image.tpl
+Subdir=templates
+Match[class_identifier]=image
+
+[embed_starter_node_image]
+Source=node/view/embed.tpl
+MatchFile=embed/node_image.tpl
+Subdir=templates
+Match[class_identifier]=image
+
 # --- end of full views ---------------------------------------------------------
 
 
