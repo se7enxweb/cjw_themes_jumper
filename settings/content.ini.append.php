@@ -17,6 +17,11 @@ AvailableCustomTags[]=Ausklappbarer_Textabschnitt
 AvailableCustomTags[]=Zeilenumbruch_erzwingen
 IsInline[Zeilenumbruch_erzwingen]=true
 
+# The table class of the v2 content (the date tables of the event pages). The kernel's output handler
+# drops an element whose class is not allowed, so without it those tables vanish.
+[table]
+AvailableClasses[]=table-striped
+
 [Ausklappbarer_Abschnitt_mobil]
 CustomAttributes[]
 CustomAttributes[]=Name
