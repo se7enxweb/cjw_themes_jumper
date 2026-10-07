@@ -2,8 +2,8 @@
 
 # Information collection of the design "starter": the feedback forms of the
 # Nexus v2 starter site (cjw_feedback_form, the contact form, and
-# ng_feedback_form). Read only in the siteaccesses that activate this
-# extension. v2 collected them with NetgenInformationCollectionBundle (actions
+# ng_feedback_form). Read only in the starter siteaccesses (ExtensionSettingsSiteAccess=cjw_starter);
+# v2 collected them with NetgenInformationCollectionBundle (actions
 # "database" and "email"); here the information collector of the kernel does
 # the same: every submission is stored, and a mail goes to the form's
 # recipient field.

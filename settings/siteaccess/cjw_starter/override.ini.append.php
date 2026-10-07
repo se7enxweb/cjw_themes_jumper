@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
-# Template overrides of the design "starter". Read only in the siteaccesses
-# that activate this extension (starter, starter_ger). The port of the Nexus v2
+# Template overrides of the design "starter". Read only in the starter siteaccesses
+# (ExtensionSettingsSiteAccess=cjw_starter: starter, starter_ger). The port of the Nexus v2
 # starter look adds its overrides here, wave by wave.
 
 # Wave 0: the starter root page shows a placeholder until the port replaces it.

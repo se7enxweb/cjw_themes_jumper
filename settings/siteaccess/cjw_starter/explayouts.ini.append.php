@@ -2,8 +2,8 @@
 
 # Layout block view types of the design "starter": the ones the Nexus v2
 # starter layouts use (Netgen Layouts 1.4 + the CJW layouts bundle), added to
-# the block definitions explayouts already has. Read only in the siteaccesses
-# that activate this extension. Each view type renders through
+# the block definitions explayouts already has. Read only in the starter siteaccesses
+# (ExtensionSettingsSiteAccess=cjw_starter). Each view type renders through
 # design/starter/templates/explayouts/block/<definition>/<view type>.tpl
 # (the templates arrive wave by wave; until then the block falls back to the
 # definition's own template).

@@ -1,13 +1,14 @@
 <?php /* #?ini charset="utf-8"?
 
-# Read only in the siteaccesses that activate this extension (starter, starter_ger).
+# Global: read in every siteaccess, admin and the online editor included (owner decision Q23),
+# so the starter content can be edited and saved anywhere without losing its custom tags.
 
 # W5 XML tags: the custom tags of the v2 starter content (v2:
 # src/AppBundle/Resources/xsl/ezxml_tags.xsl), drawn by
 # design/starter/templates/content/datatype/view/ezxmltags/<name>.tpl.
 # The two folding sections hold paragraphs, so they are block tags.
-# To edit or import such content from another siteaccess (admin), that
-# siteaccess needs the same five tags.
+
+
 [CustomTagSettings]
 AvailableCustomTags[]=trennlinie
 AvailableCustomTags[]=Umfliessen_beenden

@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
 # Settings of the design "starter" (the page chrome of the Nexus v2 starter
-# site). Read only in the siteaccesses that activate this extension. Content is
+# site). Global (every siteaccess), but read only by the templates of the design starter. Content is
 # found by REMOTE ID, never by node id, so the same settings work on every
 # installation that has the starter content (alpha and a CJW install alike).
 # Anything not found is left out of the page; the chrome then builds itself

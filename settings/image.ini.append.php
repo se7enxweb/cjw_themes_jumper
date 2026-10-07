@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
-# Image aliases of the design "starter", read only in the siteaccesses that
-# activate this extension (ActiveAccessExtensions[]=cjw_themes_jumper).
+# Image aliases of the design "starter", global (every siteaccess; only the starter
+# design asks for them, and the names are new, so other sites are not affected).
 #
 # They are the image variations of the Nexus v2 starter site (i30 ... i1920 and
 # the 16:9 crops), under NEW names: cjw_i30 ... cjw_i1920. The installation may
