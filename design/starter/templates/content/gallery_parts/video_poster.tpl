@@ -8,10 +8,11 @@
     {include uri='design:content/gallery_parts/image_field.tpl' gp_image=$gp_dm.poster.content gp_alias='cjw_i1200' gp_alt=$gp_alt}
 {/if}
 {elseif and( is_set( $gp_dm.video_identifier ), $gp_dm.video_identifier.has_content )}
-{* video_type keeps its option id in data_int (1 YouTube, 2 Vimeo, 3 Dailymotion, 4 uploaded), the text is mostly empty *}
-{def $gp_vtype = cond( is_set( $gp_dm.video_type ), $gp_dm.video_type.data_text|downcase, '' )
+{* the provider as v2 reads it: no selected video type, no preview (v2 draws an empty poster then) *}
+{def $gp_vtype = ''
      $gp_vid = $gp_dm.video_identifier.content}
-{if and( $gp_vtype|eq( '' ), is_set( $gp_dm.video_type ) )}{set $gp_vtype = cond( $gp_dm.video_type.data_int|eq( 2 ), 'vimeo', $gp_dm.video_type.data_int|eq( 3 ), 'dailymotion', $gp_dm.video_type.data_int|eq( 4 ), 'upload', 'youtube' )}{/if}
+{set-block variable=$gp_vtype}{include uri='design:content/parts/video_type_v2.tpl' vt_dm=$gp_dm}{/set-block}
+{set $gp_vtype = $gp_vtype|trim}
 {if $gp_vtype|contains( 'youtube' )}
             <img {if $gp_lazy}class="swiper-lazy" data-{/if}src="{video_thumbnail( 'youtube', $gp_vid )|wash}" {if $gp_alt|ne( '' )}alt="{$gp_alt|wash}"{/if} />
 {elseif $gp_vtype|contains( 'vimeo' )}

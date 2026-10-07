@@ -4,8 +4,11 @@
    Parameters: vp_node, vp_alias (default cjw_i480). *}
 {def $vpp_dm = $vp_node.data_map
      $vpp_ident = cond( and( is_set( $vpp_dm.video_identifier ), $vpp_dm.video_identifier.has_content ), $vpp_dm.video_identifier.content, '' )
-     $vpp_type = cond( is_set( $vpp_dm.video_type ), $vpp_dm.video_type.data_text|downcase, '' )
+     $vpp_type = ''
      $vpp_alt = $vp_node.name}
+{* the provider as v2 reads it (content.fields.video_type.value.identifiers): no selected type, no preview *}
+{set-block variable=$vpp_type}{include uri='design:content/parts/video_type_v2.tpl' vt_dm=$vpp_dm}{/set-block}
+{set $vpp_type = $vpp_type|trim}
     <a href={$vp_node.url_alias|ezurl} class="image-16by9" aria-label="{$vpp_alt|wash}">
         <figure>
             {if and( is_set( $vpp_dm.poster ), $vpp_dm.poster.has_content )}
@@ -15,7 +18,7 @@
                     <img src="" class="vimeo-poster" data-id="{$vpp_ident|wash}" data-thumbname="thumbnail_large" alt="{$vpp_alt|wash}" />
                 {elseif $vpp_type|contains( 'dailymotion' )}
                     <img src="" class="dailymotion-poster" data-id="{$vpp_ident|wash}" data-thumbname="thumbnail_360_url" alt="{$vpp_alt|wash}" />
-                {else}
+                {elseif $vpp_type|contains( 'youtube' )}
                     <img data-src="{video_thumbnail( 'youtube', $vpp_ident )|ezroot( 'no' )}" alt="{$vpp_alt|wash}" />
                 {/if}
             {/if}
