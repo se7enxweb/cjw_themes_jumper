@@ -127,13 +127,26 @@ class cjwOsmTileProxy
         $tmp = $file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, $data ) === false )
             return false;
-        @chmod( $tmp, octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+        @chmod( $tmp, self::fileMode( octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) ) );
         if ( !@rename( $tmp, $file ) )
         {
             @unlink( $tmp );
             return false;
         }
         return true;
+    }
+
+    /**
+     * The mode $mode within the limit for new files the kernel sets (EZP_FILE_MODE_MAX in config.php, see
+     * eZFile::fileMode()): never wider, and without a limit exactly $mode. On a kernel without that helper
+     * (Exponential before 6.0.15) $mode as it is.
+     *
+     * @param int $mode
+     * @return int
+     */
+    protected static function fileMode( $mode )
+    {
+        return method_exists( 'eZFile', 'fileMode' ) ? eZFile::fileMode( $mode ) : $mode;
     }
 
     protected static function userAgent()
