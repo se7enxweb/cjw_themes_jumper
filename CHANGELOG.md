@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- Updated: The map tiles `osm_proxy` caches get the mode of `site.ini [FileSettings] StorageFilePermissions`
+  within the limit for new files of the kernel (`EZP_FILE_MODE_MAX` in `config.php`, Exponential 6.0.15). Without
+  that limit, or on an older kernel, they get exactly the mode they got before.
+
 ## 0.1.0
 
 The first release: the design `starter`, a port of the Nexus v2 CJW starter look to Exponential 6.
