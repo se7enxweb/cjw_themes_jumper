@@ -145,4 +145,33 @@ Classes[]=ng_video
 Classes[]=ng_audio
 # --- end of W5 forms and W5 video and audio --------------------------------------
 
+[OpenGraph]
+# The Open Graph and Twitter tags of the page head (pagelayout/head/opengraph.tpl).
+# og:image is, in this order: the image of the page's metadata field (its own or
+# the class default, xrowmetadata 1.4.7 and later), the first image field below
+# that has an image, the image of the first related multimedia item, DefaultImage.
+# Classes whose pages are og:type "article" (every other page is "website").
+ArticleClasses[]
+ArticleClasses[]=ng_article
+ArticleClasses[]=ng_news
+ArticleClasses[]=ng_blog_post
+ArticleClasses[]=ng_recipe
+ArticleClasses[]=tmv_event
+# Image fields of the page's object, in the order they are tried.
+ImageAttributes[]
+ImageAttributes[]=image
+ImageAttributes[]=teaser_image
+ImageAttributes[]=poster
+ImageAttributes[]=additional_image
+# Relation list fields whose first item's image is tried next.
+RelationAttributes[]
+RelationAttributes[]=related_multimedia
+# The image alias drawn (1200 x 675, the size the large preview card shows).
+ImageAlias=cjw_i1200_16-9
+# The image when the page has none (design image, 1200 x 630).
+DefaultImage=opengraph/starter_default.png
+DefaultImageWidth=1200
+DefaultImageHeight=630
+DefaultImageType=image/png
+
 */ ?>

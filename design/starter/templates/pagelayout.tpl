@@ -75,6 +75,7 @@
 <head>
     <meta charset="utf-8" />
 {include uri='design:pagelayout/head/meta.tpl'}
+{include uri='design:pagelayout/head/opengraph.tpl'}
 {include uri='design:pagelayout/head/link.tpl'}
 {include uri='design:pagelayout/head/style.tpl'}
 {include uri='design:pagelayout/head/script.tpl'}
