@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+- Added: Open Graph and Twitter tags on every page of the design `starter` (`pagelayout/head/opengraph.tpl`):
+  `og:title`, `og:description`, `og:url` (with the siteaccess path), `og:type` (`article` for the classes of
+  `cjw_jumper.ini [OpenGraph] ArticleClasses`), `og:site_name`, `og:locale` (from the siteaccess locale),
+  `twitter:card` and exactly one `og:image` with `twitter:image`.
+- Added: `og:image` is the image of the metadata field (its own or the class default, with xrowmetadata 1.4.7 and
+  later), else the page's image field or its first related multimedia item in `cjw_i1200_16-9`, else the new
+  design image `images/opengraph/starter_default.png` (1200 x 630). Settings in `cjw_jumper.ini [OpenGraph]`.
+
 ## 0.1.1
 
 - Updated: The map tiles `osm_proxy` caches get the mode of `site.ini [FileSettings] StorageFilePermissions`
