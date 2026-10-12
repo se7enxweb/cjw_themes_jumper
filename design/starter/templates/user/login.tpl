@@ -1,3 +1,4 @@
+{* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 98854ab935), Copyright (C) Mugo Web, GPL v2 *}
 {* The sign-in page of the design starter (v2: themes/app/user/login.html.twig), drawn in the main zone like v2's
    full_view block. The kernel's user/login does the work: the field and button names are the ones it reads (Login,
    Password, LoginButton, RedirectURI, Cookie, Last_*), the form token is added by ezformtoken, the address after
@@ -47,5 +48,8 @@
                 {include uri='design:user2fa/parts/social_buttons.tpl' context='login' redirect=$User:redirect_uri}
             {/if}
 
+            {* the register link only for a user who may register (policy omit list or the user/register policy) *}
+            {if fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) )}
             <p class="text-center note mt-5">{"Don't have an account?"|i18n( 'design/starter/user' )} <a href={'/user/register'|ezurl}>{'Register'|i18n( 'design/starter/user' )}</a>.</p>
+            {/if}
         </div>
