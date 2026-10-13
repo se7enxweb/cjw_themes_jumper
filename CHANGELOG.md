@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3
+
+- Updated: The login page shows the register link only to a visitor who may open `user/register`
+  (`fetch( 'user', 'can_open' )`): unchanged on a site that keeps `user/register` in the policy omit list,
+  hidden on a new Exponential 6.0.15 installation until the Anonymous role gets the `user/register` policy. The
+  idea comes from LoveStack, Mugo Web's distribution (commit 98854ab935), with thanks.
+
 ## 0.1.2
 
 - Added: Open Graph and Twitter tags on every page of the design `starter` (`pagelayout/head/opengraph.tpl`):
