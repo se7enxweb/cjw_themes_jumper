@@ -35,7 +35,7 @@
                                       popupAnchor: [0, -56]
                 {rdelim});
 
-                markerPopup = L.popup().setContent( '<h1>{$lm_title|wash( 'javascript' )}</h1><p>{$lm_loc.address|wash( 'javascript' )}</p>' );
+                markerPopup = L.popup().setContent( '<h1>{$lm_title|wash( 'javascript' )}</h1><p>{$lm_loc.address|wash|wash( 'javascript' )}</p>' );
 
                 markerOptions = {ldelim} 'icon': markerIcon {rdelim};
 
