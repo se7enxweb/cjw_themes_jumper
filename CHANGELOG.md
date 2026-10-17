@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.5
+
+- Fixed: The starter design passes the contrast, target size and link name checks (axe, WCAG 2.2 AA). The small
+  logo link of the top navigation is named by its image ("Go to home page"). `starter.css` darkens, in the same
+  hue, the v2 colours that carried white text or sat as text on white below 4.5:1 (the footer, the coloured tiles,
+  the single tile's title backdrop below the desktop width, the event teasers, the orange of rich text links, a
+  light orange on the dark grey teasers) and makes the footer menu links 24px high; the v2 stylesheets stay
+  unchanged. Related multimedia images and linked event images fall back to the object's name for their alt text.
+
 ## 0.1.4
 
 - Fixed: The single-location map (`content/parts/leaflet_map_single.tpl`) escapes the address and the title for
