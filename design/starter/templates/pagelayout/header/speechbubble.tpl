@@ -8,11 +8,11 @@
 {/if}
                     </a>
 
-                    <a href="javascript:closeBubble()" class="close-link">
+                    <a href="#" class="close-link" data-cjw-bubble="close">
                         <img src={'icons/close_white.png'|ezimage} alt="{'Close'|i18n( 'design/starter/pagelayout' )|wash}"/>
                     </a>
                 </div>
 
-                <a href="javascript:showBubble()" class="speechbubble-icon">
+                <a href="#" class="speechbubble-icon" data-cjw-bubble="open">
                     <img src={'icons/open-speechbubble.png'|ezimage} alt="{'Close'|i18n( 'design/starter/pagelayout' )|wash}"/>
                 </a>
