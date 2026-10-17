@@ -32,7 +32,7 @@
                     {if $ev_img}
                         {if $ev_link}
                         <a {include uri='design:content/item_parts/relation_link_attributes.tpl' rl_node=$node}>
-                            <img src="{$ev_img.content['cjw_i480'].url|ezroot( 'no' )}" alt="{$ev_img.content.alternative_text|wash}" />
+                            <img src="{$ev_img.content['cjw_i480'].url|ezroot( 'no' )}" alt="{cond( $ev_img.content.alternative_text|ne( '' ), $ev_img.content.alternative_text, $node.name )|wash}" />
                         </a>
                         {else}
                             <img src="{$ev_img.content['cjw_i480'].url|ezroot( 'no' )}" alt="{$ev_img.content.alternative_text|wash}" />

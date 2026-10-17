@@ -6,3 +6,40 @@
 .exp-cc {
   font-family: "Open Sans", sans-serif;
 }
+
+/* Contrast (WCAG 2.2 AA, 4.5:1 for text): the v2 colours that carry white text or sit as text on white are
+   darkened here, in the same hue, so the pages pass an accessibility check. v2's own files stay unchanged.
+   - the footer's blue behind the white footer menu links (#749cbe: 2.9:1)
+   - the coloured tiles behind their white titles (v2: the colours at 85 % over white, 1.9 to 4.0:1); the
+     selectors are v2's own, in its order, so the same tile gets the same colour family
+   - the orange of the links in rich text on white (#fd7e14: 2.6:1) */
+footer { background-color: #5a7994; }
+.nested-row > .col-tile:nth-of-type(1n) .view-type-tile { background-color: #ad6156; }
+.nested-row > .col-tile:nth-of-type(2n) .view-type-tile { background-color: #5c7992; }
+.nested-row > .col-tile:nth-of-type(3n) .view-type-tile { background-color: #8f732f; }
+.nested-row > .col-tile:nth-of-type(4n) .view-type-tile { background-color: #3d816b; }
+.nested-row > .col-tile:nth-of-type(5n) .view-type-tile { background-color: #517b90; }
+.nested-row > .col-tile:nth-of-type(6n) .view-type-tile { background-color: #667889; }
+.ezxmltext-field p a:not(.btn) { color: #b85b0e; }
+
+/* Below the desktop width (where v2 lays the single tile's title over its picture, on a 30 % black that is a light
+   grey where the picture does not reach): a darker backdrop behind the white title. */
+@media (max-width: 991.98px) {
+  .single-row .col-12 .view-type-tile .tile-feature { background-color: rgba(0, 0, 0, 0.6); }
+}
+
+/* Footer menu links: at least 24px high (WCAG 2.2 target size), also when the items stack on a narrow screen */
+footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-height: 24px; }
+
+/* Event teasers: the v2 colours behind their white text, darkened to 4.5:1 in the same hue (2n and 5n pass) */
+.row > .col-event:nth-of-type(1n) article { background-color: #936e4e; }
+.row > .col-event:nth-of-type(2n) article { background-color: #2b4861; }
+.row > .col-event:nth-of-type(3n) article { background-color: #aa653c; }
+.row > .col-event:nth-of-type(4n) article { background-color: #c45248; }
+.row > .col-event:nth-of-type(5n) article { background-color: #38728f; }
+.row > .col-event:nth-of-type(6n) article { background-color: #70796f; }
+.row > .col-event:nth-of-type(7n) article { background-color: #9f6a50; }
+.row > .col-event:nth-of-type(8n) article { background-color: #587a98; }
+
+/* Rich text links on the dark grey teasers (#515151): a light orange (5:1) instead of the dark one above */
+.view-type-teaser_bg_matrix.chess .ezxmltext-field p a:not(.btn) { color: #ffc08a; }

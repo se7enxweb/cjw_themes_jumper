@@ -34,7 +34,7 @@
                             <img
                                 src={ezini( 'Header', 'NavigationLogo', 'cjw_jumper.ini' )|ezimage}
                                 height="40"
-                                alt="">
+                                alt="{'Go to home page'|i18n( 'design/starter/pagelayout' )|wash}">
 
                                                     </div>
 
