@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4
+
+- Fixed: The single-location map (`content/parts/leaflet_map_single.tpl`) escapes the address and the title for
+  HTML before it escapes them for JavaScript (`|wash|wash( 'javascript' )`). Both go into
+  `L.popup().setContent()`, which reads HTML, so markup in an address or a title ran in the popup. Pull request
+  #1 by ekked (address), title fixed alongside. ezgmaplocation 6.0.8 stores the address as typed; run its
+  upgrade step (`decodeaddressentities.php`) so that older addresses do not show their HTML entities.
+
 ## 0.1.3
 
 - Updated: The login page shows the register link only to a visitor who may open `user/register`
