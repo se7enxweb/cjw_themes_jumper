@@ -3,6 +3,8 @@
    a module path of the current siteaccess, relative to the host (v2 writes the host in front; an absolute URL
    here would be kept in the view cache that Apache and Velocity share and send one server's visitors to the other).
    The statements end in semicolons (v2 relies on line breaks, which the template engine drops after {rdelim}).
+   The title and the address go into L.popup().setContent(), which reads HTML: each is escaped for HTML first
+   (|wash) and then for the JavaScript string (|wash( 'javascript' )), in that order.
    Input: lm_node, the node with the ezgmaplocation field "location". *}
 {if and( is_set( $lm_node.data_map.location ), $lm_node.data_map.location.has_content )}
 {def $lm_loc = $lm_node.data_map.location.content
@@ -35,7 +37,7 @@
                                       popupAnchor: [0, -56]
                 {rdelim});
 
-                markerPopup = L.popup().setContent( '<h1>{$lm_title|wash( 'javascript' )}</h1><p>{$lm_loc.address|wash|wash( 'javascript' )}</p>' );
+                markerPopup = L.popup().setContent( '<h1>{$lm_title|wash|wash( 'javascript' )}</h1><p>{$lm_loc.address|wash|wash( 'javascript' )}</p>' );
 
                 markerOptions = {ldelim} 'icon': markerIcon {rdelim};
 
