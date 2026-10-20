@@ -1,7 +1,14 @@
 {* The forgotten-password page of the design starter (v2: themes/app/user/forgot_password.html.twig and
    forgot_password_sent.html.twig), drawn in the main zone like v2's full_view block. The kernel's
    user/forgotpassword does the work (UserEmail, GenerateButton; the mail with the link, then the new password);
-   the confirmation never says whether an account with that address exists. *}
+   the confirmation never says whether an account with that address exists.
+   In demo mode (EXP_DEMO_MODE=1) a notice from the kernel says, to everyone, that administrator passwords cannot be
+   reset. *}
+{if first_set( $demo_mode_text, '' )|ne( '' )}
+        <div class="full-form-content">
+        <div class="alert alert-warning" role="status">{$demo_mode_text|wash}</div>
+    </div>
+{/if}
 {if $link}
         <div class="full-form-content">
         <div class="full-form-response">
