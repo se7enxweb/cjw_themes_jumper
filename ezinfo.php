@@ -10,7 +10,7 @@ class cjw_themes_jumperInfo
     {
         return array(
             'Name'      => 'CJW Themes Jumper',
-            'Version'   => "0.1.7",
+            'Version'   => "0.1.8",
             'Author'    => '7x',
             'Copyright' => "2007 - 2026 CJW Network, JAC Systeme GmbH and 7x",
             'License'   => "GNU General Public License v2.0 (or any later version)",
