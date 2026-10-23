@@ -5,15 +5,15 @@
     <name>design/starter/pagelayout</name>
     <message>
         <source>Open the menu containing all topics</source>
-        <translation>Otwórz menu ze wszystkimi tematami</translation>
+        <translation>Otworzyć menu ze wszystkimi tematami</translation>
     </message>
     <message>
         <source>Go to home page</source>
-        <translation>Przejdź do strony głównej</translation>
+        <translation>Przejść do strony głównej</translation>
     </message>
     <message>
         <source>Close the navigation</source>
-        <translation>Zamknij nawigację</translation>
+        <translation>Zamknąć nawigację</translation>
     </message>
     <message>
         <source>close</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknij</translation>
+        <translation>Zamknąć</translation>
     </message>
     <message>
         <source>Start</source>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Go to "%name"</source>
-        <translation>Przejdź do "%name"</translation>
+        <translation>Przejść do "%name"</translation>
     </message>
     <message>
         <source>Login</source>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Search %site_name</source>
-        <translation>Szukaj w %site_name</translation>
+        <translation>Szukać w %site_name</translation>
     </message>
     <message>
         <source>Exponential powered by JAC Systeme</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Change language</source>
-        <translation>Zmień język</translation>
+        <translation>Zmienić język</translation>
     </message>
 </context>
 <context>
@@ -60,7 +60,7 @@
     </message>
     <message>
         <source>Close without changes</source>
-        <translation>Zamknij bez zmian</translation>
+        <translation>Zamknąć bez zmian</translation>
     </message>
     <message>
         <source>This website stores only what it needs to work: a session cookie when you sign in, and copies of the pages you visit, kept in your browser so they open faster. YouTube videos load only when you press play. "Accept all" lets them load as soon as a page opens; YouTube (Google) may then store data in your browser. Your choice is kept in a cookie for 6 months. Details are in our %cookie_link.</source>
@@ -68,11 +68,11 @@
     </message>
     <message>
         <source>Reject all</source>
-        <translation>Odrzuć wszystkie</translation>
+        <translation>Odrzucić wszystkie</translation>
     </message>
     <message>
         <source>Accept all</source>
-        <translation>Zaakceptuj wszystkie</translation>
+        <translation>Zaakceptować wszystkie</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -100,7 +100,7 @@
     </message>
     <message>
         <source>Save my choice</source>
-        <translation>Zapisz mój wybór</translation>
+        <translation>Zapisać mój wybór</translation>
     </message>
     <message>
         <source>Cookie Policy</source>
@@ -115,11 +115,11 @@
     </message>
     <message>
         <source>Open</source>
-        <translation>Otwórz</translation>
+        <translation>Otworzyć</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknij</translation>
+        <translation>Zamknąć</translation>
     </message>
     <message>
         <source>cal</source>
@@ -147,7 +147,7 @@
     </message>
     <message>
         <source>Send</source>
-        <translation>Wyślij</translation>
+        <translation>Wysłać</translation>
     </message>
     <message>
         <source>Required fields</source>
@@ -155,14 +155,14 @@
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobierz</translation>
+        <translation>Pobrać</translation>
     </message>
 </context>
 <context>
     <name>design/starter/form</name>
     <message>
         <source>Send form</source>
-        <translation>Wyślij formularz</translation>
+        <translation>Wysłać formularz</translation>
     </message>
     <message>
         <source>Required fields</source>
@@ -174,11 +174,11 @@
     </message>
     <message>
         <source>Return to site</source>
-        <translation>Wróć do witryny</translation>
+        <translation>Wrócić do witryny</translation>
     </message>
     <message>
         <source>Enter a valid value</source>
-        <translation>Podaj poprawną wartość</translation>
+        <translation>Podać poprawną wartość</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -209,11 +209,11 @@
     </message>
     <message>
         <source>Play video</source>
-        <translation>Odtwórz film</translation>
+        <translation>Odtworzyć film</translation>
     </message>
     <message>
         <source>Play video: %title</source>
-        <translation>Odtwórz film: %title</translation>
+        <translation>Odtworzyć film: %title</translation>
     </message>
     <message>
         <source>Always allow YouTube videos on this site</source>
@@ -221,7 +221,7 @@
     </message>
     <message>
         <source>Stop loading YouTube automatically</source>
-        <translation>Przestań automatycznie wczytywać YouTube</translation>
+        <translation>Przestać automatycznie wczytywać YouTube</translation>
     </message>
     <message>
         <source>YouTube video</source>
@@ -271,7 +271,7 @@
     <name>design/starter/search</name>
     <message>
         <source>Search</source>
-        <translation>Wyszukaj</translation>
+        <translation>Wyszukać</translation>
     </message>
     <message>
         <source>No results were found when searching for "%searchText".</source>
@@ -310,7 +310,7 @@
     </message>
     <message>
         <source>Enter your username or e-mail</source>
-        <translation>Wpisz nazwę użytkownika lub e-mail</translation>
+        <translation>Wpisać nazwę użytkownika lub e-mail</translation>
     </message>
     <message>
         <source>Password</source>
@@ -318,11 +318,11 @@
     </message>
     <message>
         <source>Enter your password</source>
-        <translation>Wpisz hasło</translation>
+        <translation>Wpisać hasło</translation>
     </message>
     <message>
         <source>Log in</source>
-        <translation>Zaloguj się</translation>
+        <translation>Zalogować się</translation>
     </message>
     <message>
         <source>Forgot password?</source>
@@ -334,11 +334,11 @@
     </message>
     <message>
         <source>Register</source>
-        <translation>Zarejestruj się</translation>
+        <translation>Zarejestrować się</translation>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>Zapamiętaj mnie</translation>
+        <translation>Zapamiętać mnie</translation>
     </message>
     <message>
         <source>The username or password is not right.</source>
@@ -406,7 +406,7 @@
     </message>
     <message>
         <source>Send</source>
-        <translation>Wyślij</translation>
+        <translation>Wysłać</translation>
     </message>
     <message>
         <source>Please enter a valid e-mail address.</source>
@@ -422,7 +422,7 @@
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmień hasło</translation>
+        <translation>Zmienić hasło</translation>
     </message>
     <message>
         <source>Old password</source>
@@ -434,7 +434,7 @@
     </message>
     <message>
         <source>Repeat new password</source>
-        <translation>Powtórz nowe hasło</translation>
+        <translation>Powtórzyć nowe hasło</translation>
     </message>
     <message>
         <source>Your password has been successfully changed.</source>
@@ -450,7 +450,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anuluj</translation>
+        <translation>Anulować</translation>
     </message>
     <message>
         <source>First name</source>
@@ -568,7 +568,7 @@
     </message>
     <message>
         <source>Read more</source>
-        <translation>Czytaj więcej</translation>
+        <translation>Czytać więcej</translation>
     </message>
 </context>
 </TS>
