@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.10
+
+- Updated: Remember me is checked by default on the starter design's login form, as on the kernel's login forms
+  in Exponential 6.0.15 (site.ini [Session] RememberMeTimeout, now 360 days).
+
 ## 0.1.5
 
 - Fixed: The starter design passes the contrast, target size and link name checks (axe, WCAG 2.2 AA). The small
