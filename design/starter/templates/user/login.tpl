@@ -44,6 +44,10 @@
                     </fieldset>
             </form>
 
+            {* "Sign in with a passkey" ([PasskeySettings] of site.ini), as a form of its own below the sign-in form;
+               draws nothing when the view offers no passkeys. Drawn by stylesheets/starter.css. *}
+            {include uri='design:user/parts/passkey_login.tpl'}
+
             {if ezmodule( 'user2fa/oauth' )}
                 {include uri='design:user2fa/parts/social_buttons.tpl' context='login' redirect=$User:redirect_uri}
             {/if}

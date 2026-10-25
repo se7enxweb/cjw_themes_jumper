@@ -43,3 +43,15 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 
 /* Rich text links on the dark grey teasers (#515151): a light orange (5:1) instead of the dark one above */
 .view-type-teaser_bg_matrix.chess .ezxmltext-field p a:not(.btn) { color: #ffc08a; }
+
+/* "Sign in with a passkey" below the sign-in form (user/login.tpl includes the kernel's user/parts/passkey_login.tpl,
+   whose button has the class "button"): the outlined black of the starter's "Log in" button, and the status line. */
+.exp-passkey-login { margin: 1.5rem 0 0; padding: 1.5rem 0 0; border-top: 1px solid #dee2e6; }
+.exp-passkey-login .button {
+  display: inline-block; padding: .375rem .75rem; border: 1px solid #000; border-radius: .25rem;
+  background: #fff; color: #000; font: inherit; line-height: 1.5; cursor: pointer;
+}
+.exp-passkey-login .button:hover, .exp-passkey-login .button:focus { background: #000; color: #fff; }
+.exp-passkey-login [data-exp-passkey-status] { margin: .75rem 0 0; }
+.exp-passkey-login [data-exp-passkey-status].is-bad { color: #b02a37; }
+.exp-passkey-login [hidden] { display: none !important; }
