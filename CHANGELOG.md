@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.11 (2026-10-28)
+
+- Updated: The login page offers passkey sign-in.
+
 ## 0.1.10
 
 - Updated: Remember me is checked by default on the starter design's login form, as on the kernel's login forms
