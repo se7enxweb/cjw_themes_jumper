@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.12 (2026-10-29)
+
+- Updated: One copyright notice, Exponential Foundation and 7x.
+
 ## 0.1.11 (2026-10-28)
 
 - Updated: The login page offers passkey sign-in.
