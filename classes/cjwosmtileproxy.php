@@ -6,7 +6,7 @@
  * integers put in. Tiles are cached under <cache dir>/osm_tiles/<z>/<x>/<y>.png for CacheTTL seconds; when the
  * tile server cannot be reached, an expired cached tile is sent rather than none.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */

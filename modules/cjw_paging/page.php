@@ -4,7 +4,7 @@
  * fragment (no page layout). An unknown block, node or page is an empty 200 answer, as the v2 route gives for a
  * page past the end.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */

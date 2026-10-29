@@ -4,7 +4,7 @@
  * Input: x, y, z from the query string (v2 form) or the path (/osm_proxy/tiles/<z>/<x>/<y>). Anything else is
  * a 400. The tile is sent and the request ends here (no page layout).
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */

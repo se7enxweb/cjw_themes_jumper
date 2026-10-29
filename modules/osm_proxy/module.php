@@ -5,7 +5,7 @@
  * The URL form of the Nexus v2 starter is kept: /osm_proxy/tiles/(get)/1?x=<x>&y=<y>&z=<z>; the short form
  * /osm_proxy/tiles/<z>/<x>/<y> works too. Settings: osm_proxy.ini.
  *
- * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. Copyright (C) JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */
