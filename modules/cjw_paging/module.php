@@ -5,7 +5,7 @@
  * [RoleSettings] PolicyOmitList of the starter siteaccesses (site.ini of settings/siteaccess/cjw_starter), and it
  * shows nothing the block does not already show on the page, to whoever may read that page.
  *
- * @copyright Copyright (C) 2026 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */

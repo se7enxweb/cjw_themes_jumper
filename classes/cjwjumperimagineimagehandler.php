@@ -21,7 +21,7 @@
  * The handler only takes part in conversions for aliases whose name starts with "cjw_" (outputMIMEType), so the
  * aliases of every other site keep their converters.
  *
- * @copyright Copyright (C) 2026 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */

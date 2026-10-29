@@ -16,7 +16,7 @@
  * anything else is an empty answer. The node is handed to the collection as its "current location"
  * (expLayoutsDynamicCollection::setContextNode) for the fetch only.
  *
- * @copyright Copyright (C) 2026 7x and JAC Systeme. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x and JAC Systeme. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package cjw_themes_jumper
  */
