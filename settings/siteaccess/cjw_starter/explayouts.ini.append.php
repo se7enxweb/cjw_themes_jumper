@@ -25,12 +25,25 @@ ViewTypes[]=boat_brown
 
 [BlockDefinition_list]
 ViewTypes[]=grid_tiles
+# the item views the starter design draws (content/views/<item view type>.tpl) and the Netgen site uses;
+# ItemViewTypes[] needs explayouts with expLayoutsBlockHandlerFactory::itemViewTypes()
+ItemViewTypes[event]=Veranstaltung
+ItemViewTypes[flexline]=Flexline
+ItemViewTypes[line_h]=Line - Halb / Halb - Bild rechts
 
 [BlockDefinition_gallery]
 ViewTypes[]=carousel
 ViewTypes[]=grid_gallery
 ViewTypes[]=slider
 ViewTypes[]=thumb_gallery
+# standard keeps the gallery's own rendering for blocks that name no item view
+ItemViewTypes[standard]=Standard
+ItemViewTypes[gallery_grid]=Gallery grid
+ItemViewTypes[slide]=Slide
+ItemViewTypes[gallery_thumb]=Gallery thumb
+ItemViewTypes[line]=Line
+ItemViewTypes[overlay]=Overlay
+ItemViewTypes[standard_with_intro]=Standard (with intro)
 
 [BlockSettings]
 AvailableBlocks[]=ezcontent_field
