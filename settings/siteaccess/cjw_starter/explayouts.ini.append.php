@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
 # Layout block view types of the design "starter": the ones the Nexus v2
-# starter layouts use (Netgen Layouts 1.4 + the CJW layouts bundle), added to
+# starter layouts use (v2 layouts 1.4 + the CJW layouts bundle), added to
 # the block definitions explayouts already has. Read only in the starter siteaccesses
 # (ExtensionSettingsSiteAccess=cjw_starter). Each view type renders through
 # design/starter/templates/explayouts/block/<definition>/<view type>.tpl

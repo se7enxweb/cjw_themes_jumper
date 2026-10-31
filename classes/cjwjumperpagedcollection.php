@@ -1,6 +1,6 @@
 <?php
 /**
- * One page of a paged Layouts list or grid block of the design starter (v2: Netgen Layouts' ajax block route).
+ * One page of a paged Layouts list or grid block of the design starter (v2: the ajax block route of its layouts engine).
  *
  * The design's nglayouts.js (v2's paging script) reads the block's data-base-url, appends "&page=<n>", fetches
  * that address and puts the body's elements into the block's .ajax-container (pager: replaces them, load_more:
