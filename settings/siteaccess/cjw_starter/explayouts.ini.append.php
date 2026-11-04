@@ -36,7 +36,8 @@ ViewTypes[]=carousel
 ViewTypes[]=grid_gallery
 ViewTypes[]=slider
 ViewTypes[]=thumb_gallery
-# standard keeps the gallery's own rendering for blocks that name no item view
+# a block that names no item view (stored empty) draws the view type's own: carousel, gallery_grid, slide,
+# gallery_thumb (design/starter/templates/explayouts/block/gallery/*.tpl); standard is an item view of its own
 ItemViewTypes[standard]=Standard
 ItemViewTypes[gallery_grid]=Gallery grid
 ItemViewTypes[slide]=Slide

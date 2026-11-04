@@ -1,7 +1,7 @@
 {* v2: nglayouts/themes/app/block/list/grid.html.twig and grid/<n>_columns.html.twig. For the item view "event"
    the intro of the items' parent comes first (teaser_intro, description). The columns follow the block parameter
    number_of_columns (2, 3, 4, 6; default 2), each column carries col-<item view type>. *}
-{def $lg_ivt = first_set( $block.item_view_type, 'standard' )
+{def $lg_ivt = cond( first_set( $block.item_view_type, '' )|ne( '' ), $block.item_view_type, 'standard' )
      $lg_cols = first_set( $block.parameters.number_of_columns, '2' )
      $lg_container = first_set( $block.parameters.set_container, '' )|eq( '1' )
      $lg_class = 'col-sm-6 col-md-6 col-lg-6'
