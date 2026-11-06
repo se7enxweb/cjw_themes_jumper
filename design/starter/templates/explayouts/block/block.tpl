@@ -1,6 +1,6 @@
-{* The wrapper of every block (v2: nglayouts/themes/app/block/block.html.twig): class "ngl-block ngl-<definition>
-   ngl-vt-<view type> <css class>" (v2 leaves a space at the end when the css class is empty, kept), the
-   background class, the optional container (no whitespace classes, as in v2). As in v2, a block whose content is
+{* The wrapper of every block (Jac-Example: nglayouts/themes/cjw_app/block/block.html.twig): class "ngl-block ngl-<definition>
+   ngl-vt-<view type> <css class>" plus whitespace and item-view-<item view type> (v2 leaves a space at the end when the css class is empty, kept), the
+   background class, the optional container. As in v2, a block whose content is
    empty is not drawn at all. tpl_block blocks are v2's twig_block blocks and carry v2's class names.
    The content comes from explayouts/block/<definition>.tpl.
 
@@ -25,19 +25,38 @@
 {def $bk_classes = concat( 'ngl-block ngl-', cond( $bk_def|eq( 'tpl_block' ), 'twig_block', $bk_def ),
                            ' ngl-vt-', cond( $bk_vt|eq( 'tpl_block' ), 'twig_block', $bk_vt ), ' ', $bk_css_pre, first_set( $bk_params.css_class, '' ) )}
 {undef $bk_css_pre}
-{* No whitespace classes: v2 prints none on any page (its block definitions do not define the wrapper's
-   vertical_whitespace:position/size, which the import keeps only as stored values), and app.css is v2's. *}
+{* Vertical whitespace as in Jac-Example's wrapper (design cjw_app, nglayouts/themes/cjw_app/block/block.html.twig):
+   with "Use vertical whitespace" whitespace-top-<On top> and whitespace-bottom-<On bottom>, an empty value included
+   (v2 prints "whitespace-top-" then too); the classes are in app.css. vertical_whitespace:position/size belong to
+   the wrapper of the design app, which Jac-Example does not use. *}
+{if first_set( $bk_params['vertical_whitespace:enabled'], '' )|eq( '1' )}
+    {set $bk_classes = concat( $bk_classes, ' whitespace-top-', first_set( $bk_params['vertical_whitespace:top'], '' ),
+                               ' whitespace-bottom-', first_set( $bk_params['vertical_whitespace:bottom'], '' ) )}
+{/if}
 {if and( first_set( $bk_params['background_color:enabled'], false() ), first_set( $bk_params['background_color:color'], '' )|ne( '' ) )}
     {set $bk_classes = concat( $bk_classes, ' bg-color-', $bk_params['background_color:color'] )}
 {/if}
+{* item-view-<item view type>, as list/_item.tpl draws it: the view types with one item view only (grid tiles, the
+   galleries, zig-zag, accordion) always print that one, whatever item view the block kept from an earlier view type
+   (app.css styles item-view-tile, item-view-gallery_grid ...); zigzag and accordion count for their list view types
+   only, elsewhere item-view-standard. *}
+{def $bk_ivt = first_set( $bk_block.item_view_type, '' )
+     $bk_fixed = hash( 'grid_tiles', 'tile', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
+                     'carousel', 'carousel', 'grid_gallery', 'gallery_grid', 'slider', 'slide', 'thumb_gallery', 'gallery_thumb',
+                     'grid_gallery_fixed_height', 'gallery_grid_fixed_height', 'grid_gallery_fixed_width', 'gallery_grid_fixed_width' )}
+{if is_set( $bk_fixed[$bk_vt] )}
+    {set $bk_ivt = $bk_fixed[$bk_vt]}
+{elseif and( array( 'zigzag', 'accordion' )|contains( $bk_ivt ), array( 'list_zigzag', 'list_accordion' )|contains( $bk_vt )|not )}
+    {set $bk_ivt = 'standard'}
+{/if}
     <div
-        class="{$bk_classes|wash}"
+        class="{$bk_classes|wash} item-view-{$bk_ivt|wash}"
         {if first_set( $bk_params.css_id, '' )|ne( '' )}id="{$bk_params.css_id|wash}"{/if}
     >
         {if first_set( $bk_params.set_container, false() )}<div class="container{if first_set( $bk_params['set_container:size'], '' )|ne( '' )} container-{$bk_params['set_container:size']|wash}{/if}">{/if}
 {$bk_html}
         {if first_set( $bk_params.set_container, false() )}</div>{/if}
     </div>
-{undef $bk_def $bk_vt $bk_params $bk_classes}
+{undef $bk_def $bk_vt $bk_params $bk_classes $bk_ivt $bk_fixed}
 {/if}
 {undef $bk_block $bk_html}
