@@ -571,4 +571,11 @@
         <translation>Weiterlesen</translation>
     </message>
 </context>
+<context>
+    <name>design/starter/gallery</name>
+    <message>
+        <source>Open larger view: %alt</source>
+        <translation>Größere Ansicht öffnen: %alt</translation>
+    </message>
+</context>
 </TS>

@@ -264,3 +264,56 @@
             window['map_' + id] = map;
         });
     });
+
+/*
+ * fancyBox of the gallery links (v2: cjwsite.js of the Jac-Example, which fixed this after the app.js build of this
+ * design). slick clones slides at both ends of an endless carousel, and fancyBox's own binding of [data-fancybox]
+ * counted the clones too, so every carousel image showed three times. Handled on the body for links in slick slides,
+ * one group per data-fancybox value without the clones (see below); links outside a slick slide (the fixed grid
+ * galleries) keep fancyBox's own binding. After closing, the carousel the link belongs
+ * to goes to the image shown last (only that one: a page can have several carousels, and v2's $('.carousel') sent
+ * slickGoTo to every one of them).
+ */
+jQuery( function( $ ) {
+    var slideLinks = '.slick-slide:not(.slick-cloned) .js-gallery-fancybox';
+    var options = {
+        afterClose: function( instance, current ) {
+            var carousel = current && current.opts && current.opts.$orig
+                ? $( current.opts.$orig ).closest( '.carousel.slick-initialized' ) : $();
+
+            $( '.carousel .js-gallery-fancybox, .carousel .js-gallery-fancybox img' )
+                .removeClass( 'fancybox-is-hidden' )
+                .css( { opacity: '', visibility: '' } );
+
+            if ( carousel.length ) {
+                if ( typeof current.index !== 'undefined' ) {
+                    carousel.slick( 'slickGoTo', current.index, true );
+                }
+                window.setTimeout( function() {
+                    carousel.slick( 'setPosition' );
+                }, 0 );
+            }
+        }
+    };
+
+    // fancyBox's own selector option takes every link of the selector on the page, whatever its data-fancybox
+    // group: two carousels on one page showed each other's images. So the group is collected here: the links of the
+    // same data-fancybox group (carousel-<block id>) outside the clones; a click on a clone opens its original.
+    // Handled on the body, before fancyBox's own handler on the document, which leaves a prevented click alone.
+    $( 'body' ).on( 'click.cjw-gallery', '.slick-slide .js-gallery-fancybox', function( e ) {
+        var link = $( this );
+        var group = link.attr( 'data-fancybox' ) || '';
+        var items = $( slideLinks ).filter( function() {
+            return ( $( this ).attr( 'data-fancybox' ) || '' ) === group;
+        } );
+        var index = items.index( link.closest( '.slick-cloned' ).length
+            ? items.filter( function() { return $( this ).attr( 'href' ) === link.attr( 'href' ); } ).first()
+            : link );
+
+        e.preventDefault();
+        if ( !items.length ) {
+            return;
+        }
+        $.fancybox.open( items, $.extend( {}, options, { $orig: link } ), index < 0 ? 0 : index );
+    } );
+} );
