@@ -5,7 +5,11 @@
    webpack runtime, photoswipe-init.js and app.js (its built-in jQuery 3.7.1 replaced by the page's jQuery),
    and the two Exponential Layouts scripts. Not deferred. Last, cjw_jumper_page.js: v2's inline page script, now a file (no inline code).
    v2's third-party script (optimale-praesentation "boot") is JAC's own account and is not carried (plan D-10). *}
+{* jQuery Migrate is named here: ezjscore 6.0.15 no longer adds it to ezjsc::jquery (LocalScripts[jqueryMigrate]
+   is empty), and v2's jQuery plugins in app.js (slick of the header image slider, fancyBox) need the functions
+   jQuery 4 removed ($.isFunction, $.isArray, $.type ...). *}
 {ezscript_load( array( 'ezjsc::jquery',
+                       'jquery-migrate-4.0.2.min.js',
                        'runtime.js',
                        'photoswipe-init.js',
                        'app.js',
