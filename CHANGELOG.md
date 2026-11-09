@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.14 (2026-11-09)
+
+- Updated: The sign-up form of the starter design (user/register) leaves out Meta Data and the other attributes of the user class's "meta" category: a new member has nothing to enter there.
+- Updated: The product is called Exponential Layouts in the documentation.
+
 ## 0.1.13 (2026-10-29)
 
 - Updated: One copyright notice, Exponential Foundation and 7x.
