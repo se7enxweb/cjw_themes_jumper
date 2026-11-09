@@ -21,6 +21,8 @@
 
         <fieldset>
             {foreach $content_attributes as $rg_attr}
+                {* attributes of the class's "meta" category (Meta Data and other editorial settings) are not part of signing up *}
+                {if $rg_attr.contentclass_attribute.category|eq( 'meta' )}{continue}{/if}
                 {def $rg_id = $rg_attr.id
                      $rg_dt = $rg_attr.data_type_string
                      $rg_req = $rg_attr.contentclass_attribute.is_required
