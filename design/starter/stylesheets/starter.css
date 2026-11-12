@@ -44,6 +44,37 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 /* Rich text links on the dark grey teasers (#515151): a light orange (5:1) instead of the dark one above */
 .view-type-teaser_bg_matrix.chess .ezxmltext-field p a:not(.btn) { color: #ffc08a; }
 
+/* Item views card and card_with_intro from explayouts (v2 has none), after the media design
+   (sass/nexus/content/item_view_types/_card.scss), in the starter's colours: image on top in 16:9, title and intro
+   below on a light ground; in a grid every card of a row is as high as the highest. */
+.view-type.vl8 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f2f4f6;
+}
+.vl8 .image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 0;
+  overflow: hidden;
+}
+.vl8 .image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.vl8 .article-content { padding: 1.25rem 1.5rem 1.5rem; }
+.vl8 .article-header .title { margin: 0; }
+.vl8 .article-header + .short { margin-top: .75rem; }
+.vl8 .short p:last-child { margin-bottom: 0; }
+.col-card, .col-card_with_intro { margin-bottom: 1.5rem; }
+
 /* "Sign in with a passkey" below the sign-in form (user/login.tpl includes the kernel's user/parts/passkey_login.tpl,
    whose button has the class "button"): the outlined black of the starter's "Log in" button, and the status line. */
 .exp-passkey-login { margin: 1.5rem 0 0; padding: 1.5rem 0 0; border-top: 1px solid #dee2e6; }
