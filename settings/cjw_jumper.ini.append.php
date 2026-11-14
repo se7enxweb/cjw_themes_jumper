@@ -49,8 +49,15 @@ BreakPriority=999
 MaxPriority=2000
 Limit=100
 # AdditionalNodeIDs[]: further nodes at the end of the top list, wherever
-# they are in the tree. Set only in settings/siteaccess/<siteaccess> (e.g.
-# the showcase of starter_ger): a reset here would be read after it.
+# they are in the tree, in the order given (node IDs; a node the visitor may
+# not read, or one that does not exist, is left out). Set only in
+# settings/siteaccess/<siteaccess>/cjw_jumper.ini.append.php (e.g. the
+# showcase of starter_ger): a reset here would be read after it. Example:
+#
+#   [Menu]
+#   AdditionalNodeIDs[]
+#   AdditionalNodeIDs[]=1234
+#   AdditionalNodeIDs[]=1240
 
 [Footer]
 Logo=logos/small.png
