@@ -4,15 +4,18 @@ The design `starter` for Exponential 6: the look of the Nexus v2 CJW starter sit
 template code. It draws the starter content (the CJW starter siteaccesses, English and German) with v2's markup,
 stylesheets and scripts.
 
-Status: 0.1.0, the first release.
+Status: 0.1.15; see [CHANGELOG.md](CHANGELOG.md).
 
 ## What it brings
 
 - The design `starter` (`design/starter/`): the page layout, header, offcanvas menu, breadcrumb, pre-footer and
   footer; the full, line, list, tile, teaser, slide, gallery and embed views of the starter classes; the search,
   sign-in, registration, password and error pages; the feedback forms with a honeypot field.
-- Templates for the Layouts blocks of the starter layouts (list, grid, gallery, title, rich text, columns, button
-  and more) and their view types, including paged list and grid blocks (module `cjw_paging`).
+- Templates for the Exponential Layouts blocks of the starter layouts (list, grid, gallery, title, rich text,
+  columns, button and more) and their view types, including paged list and grid blocks (module `cjw_paging`), the
+  zig-zag and accordion lists, and about thirty item views (standard, card, line variants, tile, event, teasers,
+  zig-zag, accordion ...) that editors choose in the "Item view type" select. See
+  [doc/layouts-view-types.md](doc/layouts-view-types.md).
 - The custom XML tags of the starter content, with plain renderings for the admin and every other design
   (`design/standard/`).
 - The image aliases `cjw_i30` ... `cjw_i1920` (and the 16:9 crops), drawn by the converter
@@ -50,7 +53,9 @@ doc/                                   notes on the design
 ## Requirements
 
 - Exponential 6 (the legacy kernel with the `standard` design), PHP 8.0 or later.
-- `explayouts` (the Layouts engine) and `ezjscore` (jQuery) for the pages and blocks.
+- `explayouts` (Exponential Layouts) and `ezjscore` (jQuery 4 and jQuery Migrate 4.0.2) for the pages and blocks;
+  explayouts 1.4.51 or later (`explayouts_ui_api` 1.3.37, `explayouts_ui` 1.3.34) for the item view types of the
+  starter settings. An older explayouts draws the same pages but offers only the item views of its block handlers.
 - The PHP extension `imagick` for the `cjw_*` image aliases.
 - Optional: `cjw_tmv` (the TMV event feed) for the event container pages.
 

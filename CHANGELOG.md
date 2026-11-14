@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.1.15 (2026-11-14)
+
+Pull requests #2 (Marco-JAC) and #3 to #8 (vmeyke), merged and completed. The view types, item views and settings
+are described in [doc/layouts-view-types.md](doc/layouts-view-types.md).
+
+- Added: The starter settings offer the item views the design draws in the editor's "Item view type" select
+  (`ItemViewTypes[]` of `[BlockDefinition_list]` and the gallery blocks; needs explayouts 1.4.51 or later): event,
+  flexline, tile, button, the teasers, every line variant, card and card with intro, zig-zag and accordion for the
+  list; carousel, gallery grid, slide and gallery thumb next to standard, card, line and overlay for the galleries
+  (#2, completed). The labels are English.
+- Added: The list view types "Zig-zag" and "Accordion" in the starter design (`list/list_zigzag.tpl`,
+  `list/list_accordion.tpl`, the item views `content/views/zigzag.tpl` and `accordion.tpl`, `starter.css`): image and
+  text side by side with every second item mirrored and stacked on the phone; panels that open one at a time (#7).
+  The list block names both view types in the starter settings.
+- Added: The item views "Card" and "Card (with intro)" (`content/views/card.tpl`, `card_with_intro.tpl`): the image on
+  top in 16:9, the title and the intro below on a light ground, the cards of a grid row equally high (#8).
+- Added: The toolbox's Zig-Zag, Accordion, Slider, Grid gallery and Thumb gallery blocks are drawn by the starter's
+  list and gallery templates and carry the class `ngl-list` or `ngl-gallery`, so they look like the list and gallery
+  blocks with that view type.
+- Added: The offcanvas menu closes its top list with the nodes of `cjw_jumper.ini [Menu] AdditionalNodeIDs[]`, set
+  per siteaccess (#6); the settings file shows an example.
+- Updated: The header image slider slides again: the starter pages load jQuery Migrate 4.0.2 after jQuery, which
+  ezjscore 6.0.15 no longer adds to `ezjsc::jquery` (#3).
+- Updated: "Use vertical whitespace" works: the block wrapper prints `whitespace-top-<On top>`,
+  `whitespace-bottom-<On bottom>` and `item-view-<item view type>` as the v2 site's wrapper does (#4). A list or
+  gallery block that stores no item view prints the one it draws (standard, slide).
+- Updated: The carousel shows each image once in fancyBox, one fancyBox group per gallery block, and turns to the
+  image shown last when fancyBox closes; the carousel slides carry a label for screen readers and load lazily (#5).
+  `app.js` skips the carousel and initialised sliders in its second slick call; its header names that change.
+- Updated: A view type that can draw one item view only (grid tiles, zig-zag, accordion, the galleries) draws that
+  one whatever item view the block kept from an earlier view type; a block that stores none draws its view type's
+  own (#2, #7).
+- Updated: The starter templates take their fixed styles from `starter.css` instead of `style=""` (clearing divs,
+  the video slide link, the static custom button, the form honeypot); computed values and the mail templates stay
+  inline.
+
 ## 0.1.14 (2026-11-09)
 
 - Updated: The sign-up form of the starter design (user/register) leaves out Meta Data and the other attributes of the user class's "meta" category: a new member has nothing to enter there.
