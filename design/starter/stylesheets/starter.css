@@ -55,3 +55,59 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 .exp-passkey-login [data-exp-passkey-status] { margin: .75rem 0 0; }
 .exp-passkey-login [data-exp-passkey-status].is-bad { color: #b02a37; }
 .exp-passkey-login [hidden] { display: none !important; }
+
+/* List view types from explayouts that v2 does not have, after the media design (sass/nexus/blocks/list/
+   _list_zigzag.scss, _list_accordion.scss, content/item_view_types/_zigzag.scss, _accordion.scss), in the
+   starter's colours: list_zigzag (item view zigzag, .vl9) and list_accordion (item view accordion, .vl10). */
+.ngl-vt-list_zigzag .list-item + .list-item { margin-top: 3rem; }
+.view-type-zigzag.vl9 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ngl-vt-list_zigzag .list-item:nth-child(2n) .view-type-zigzag.vl9 { flex-direction: row-reverse; }
+.view-type-zigzag.vl9 .image { flex: 0 0 50%; margin: 0; overflow: hidden; }
+.view-type-zigzag.vl9 .image img { width: 100%; height: auto; }
+.view-type-zigzag.vl9 .article-content { flex: 0 0 41.666667%; }
+.view-type-zigzag.vl9 .article-header .title { margin: 0 0 1rem; }
+.view-type-zigzag.vl9 .short + .btn { margin-top: 1rem; }
+@media (max-width: 767.98px) {
+  .view-type-zigzag.vl9,
+  .ngl-vt-list_zigzag .list-item:nth-child(2n) .view-type-zigzag.vl9 { flex-direction: column; align-items: stretch; }
+  .view-type-zigzag.vl9 .image,
+  .view-type-zigzag.vl9 .article-content { flex: 0 0 100%; }
+  .view-type-zigzag.vl9 .image + .article-content { margin-top: 1.5rem; }
+}
+
+.ngl-vt-list_accordion .list-row { display: grid; grid-gap: 1rem; }
+.view-type-accordion.vl10 {
+  background-color: #f2f4f6;
+  padding: 1.25rem 1.5rem;
+}
+.view-type-accordion.vl10 .title {
+  margin: 0;
+  position: relative;
+  padding-right: 2.5rem;
+}
+.view-type-accordion.vl10 .title a { display: block; color: inherit; text-decoration: none; }
+/* the arrow: up when open, down when closed */
+.view-type-accordion.vl10 .title a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: .25rem;
+  width: .75rem;
+  height: .75rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-25%) rotate(-135deg);
+  transition: transform .2s;
+}
+.view-type-accordion.vl10 .title a.collapsed::after { transform: translateY(-75%) rotate(45deg); }
+.view-type-accordion.vl10 .accordion-body {
+  border-top: 1px solid #b4bec7;
+  padding-top: 1rem;
+  margin-top: 1.25rem;
+}
+.view-type-accordion.vl10 .accordion-body p:last-child { margin-bottom: 0; }
+.view-type-accordion.vl10 .short + .read-more { display: inline-block; margin-top: .75rem; }

@@ -7,6 +7,9 @@
      $lt_feature = $block.values.items[rand( 0, $block.values.items|count|dec )]
      $lt_col = 'col-4'
      $lt_nested = 'col-12 one_tile-row'}
+{* Grid (Tiles) draws its items as tiles only: the editor shows no item view select for it and keeps the item view
+   a block had before (list item, standard, zigzag ...), which the tile rows cannot draw (see _item.tpl). *}
+{set $lt_ivt = 'tile'}
 {if $lt_count|lt( 2 )}{set $lt_col = 'col-12 col-one_tile'}
 {elseif $lt_count|lt( 3 )}{set $lt_col = 'col-12'}
 {elseif $lt_count|lt( 5 )}{set $lt_col = 'col-6'}

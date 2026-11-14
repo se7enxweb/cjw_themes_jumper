@@ -7,6 +7,8 @@
      $lg_class = 'col-sm-6 col-md-6 col-lg-6'
      $lg_paged = first_set( $block.parameters['paged_collections:enabled'], '' )|eq( '1' )
      $lg_page_only = is_set( $paged_page_only )}
+{* zigzag and accordion belong to list_zigzag and list_accordion only (see _item.tpl) *}
+{if array( 'zigzag', 'accordion' )|contains( $lg_ivt )}{set $lg_ivt = 'standard'}{/if}
 {if $lg_cols|eq( '3' )}{set $lg_class = 'col-sm-6 col-md-6 col-lg-4'}
 {elseif $lg_cols|eq( '4' )}{set $lg_class = 'col-sm-6 col-md-4 col-lg-3'}
 {elseif $lg_cols|eq( '6' )}{set $lg_class = 'col-sm-4 col-md-3 col-lg-2'}
