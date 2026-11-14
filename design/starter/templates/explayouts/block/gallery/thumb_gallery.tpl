@@ -1,7 +1,7 @@
 {* v2: the thumb_gallery block of the standard layouts blocks as v2 renders it: the large swiper (gallery-top) and the
    thumbnail swiper (gallery-thumbs); each item is drawn twice in its item view, with image_type main and thumb. *}
 {if and( is_set( $block.values.items ), $block.values.items|count|gt( 0 ) )}
-{def $tg_ivt = first_set( $block.item_view_type, 'gallery_thumb' )
+{def $tg_ivt = cond( first_set( $block.item_view_type, '' )|ne( '' ), $block.item_view_type, 'gallery_thumb' )
      $tg_p = $block.parameters}
         <div class="thumb-swiper">
             <div class="gallery-top swiper swiper-container"

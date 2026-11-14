@@ -2,6 +2,6 @@
    pages carry an empty one). *}
         <div class="slick-slider" data-slick='{ldelim} "slidesToShow": 2, "infinite": false, "responsive": [ {ldelim} "breakpoint": 480, "settings": {ldelim} "slidesToShow": 1 {rdelim} {rdelim} ] {rdelim}'>
 {foreach first_set( $block.values.items, array() ) as $gs_entry}
-{include uri='design:explayouts/block/list/_item.tpl' item=$gs_entry.node ivt=first_set( $block.item_view_type, 'slide' ) block=$block}
+{include uri='design:explayouts/block/list/_item.tpl' item=$gs_entry.node ivt=cond( first_set( $block.item_view_type, '' )|ne( '' ), $block.item_view_type, 'slide' ) block=$block}
 {/foreach}
                     </div>

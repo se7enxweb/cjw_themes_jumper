@@ -24,7 +24,7 @@
 
         <div class="flex-row nglayouts-flex-row {if first_set( $block.parameters.enable_lightbox, '' )|eq( '1' )}js-lightbox-enabled{/if}">
 {foreach $block.values.items as $gg_entry}
-                            <div class="nglayouts-as-flex" style="width:{first_set( $gg_widths[$gg_n], 100|div( $gg_n ) )}%">{include uri='design:explayouts/block/list/_item.tpl' item=$gg_entry.node ivt=first_set( $block.item_view_type, 'gallery_grid' ) block=$block}</div>
+                            <div class="nglayouts-as-flex" style="width:{first_set( $gg_widths[$gg_n], 100|div( $gg_n ) )}%">{include uri='design:explayouts/block/list/_item.tpl' item=$gg_entry.node ivt=cond( first_set( $block.item_view_type, '' )|ne( '' ), $block.item_view_type, 'gallery_grid' ) block=$block}</div>
 {/foreach}
         </div>
 {undef $gg_n $gg_widths $gg_dm}

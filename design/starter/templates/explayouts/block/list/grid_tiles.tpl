@@ -2,7 +2,7 @@
    random as in v2, is the large feature tile; all items follow as small tiles (one, two or three per row by their
    count), an empty tile fills an odd row, and for two to four items a tile with the parent's name fills the rest. *}
 {def $lt_items = $block.values.items
-     $lt_ivt = first_set( $block.item_view_type, 'tile' )
+     $lt_ivt = cond( first_set( $block.item_view_type, '' )|ne( '' ), $block.item_view_type, 'tile' )
      $lt_count = $block.values.items|count
      $lt_feature = $block.values.items[rand( 0, $block.values.items|count|dec )]
      $lt_col = 'col-4'

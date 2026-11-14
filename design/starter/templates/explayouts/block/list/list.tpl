@@ -8,7 +8,7 @@
         <div class="list-row">
 {foreach $block.values.items as $ll_item}
                             <div class="list-item">
-{include uri='design:explayouts/block/list/_item.tpl' item=$ll_item ivt=$block.item_view_type block=$block}
+{include uri='design:explayouts/block/list/_item.tpl' item=$ll_item ivt=cond( first_set( $block.item_view_type, '' )|ne( '' ), $block.item_view_type, 'standard' ) block=$block}
                                     </div>
 {/foreach}
                     </div>
