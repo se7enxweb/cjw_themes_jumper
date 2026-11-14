@@ -32,7 +32,7 @@
                             <button type="submit" name="ActionCollectInformation" value="1" class="btn btn-primary">{'Send form'|i18n( 'design/starter/form' )}</button>
                         </div>
 {/if}
-                    <div class="cjw-form-hp" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"><label for="{$fm_name}_website">Website</label><input type="text" id="{$fm_name}_website" name="CjwFormWebsite" value="" tabindex="-1" autocomplete="off" /></div>
+                    <div class="cjw-form-hp" aria-hidden="true"><label for="{$fm_name}_website">Website</label><input type="text" id="{$fm_name}_website" name="CjwFormWebsite" value="" tabindex="-1" autocomplete="off" /></div>
                     <input type="hidden" name="ContentNodeID" value="{$fm_node.node_id}" />
                     <input type="hidden" name="ContentObjectID" value="{$fm_node.contentobject_id}" />
                     <input type="hidden" name="ViewMode" value="full" />

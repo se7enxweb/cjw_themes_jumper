@@ -7,7 +7,7 @@
 {if and( $sv_type|contains( 'vimeo' ), or( $sv_id|ne( '' ), and( is_set( $sv_dm.video_file ), $sv_dm.video_file.has_content ) ) )}
         <div class="embed-video-container">
 {if and( is_set( $sv_dm.poster ), $sv_dm.poster.has_content )}
-                <a data-fancybox="{$view_type|wash}" href="https://vimeo.com/{$sv_id|wash}" style="position: relative; display: inline-block">
+                <a data-fancybox="{$view_type|wash}" href="https://vimeo.com/{$sv_id|wash}" class="cjw-video-slide-link">
                     <img src="{$sv_dm.poster.content['cjw_i770'].url|ezroot( 'no' )}" alt="" />
 {if and( is_set( $sv_dm.teaser_intro ), $sv_dm.teaser_intro.has_content )}
                         <div class="ezxmltext-field">{$sv_dm.teaser_intro.content.output.output_text}</div>
@@ -21,7 +21,7 @@
                     <a class="open-in-overlay" data-fancybox="{$view_type|wash}" href="https://vimeo.com/{$sv_id|wash}">
                         <img src={'icons/symbol-plus.png'|ezimage} alt="+" />
                     </a>
-                    <iframe frameborder="0" class="embed-responsive-item" src="https://player.vimeo.com/video/{$sv_id|wash}?byline=false&title=false&portrait=false&loop=true" style="width: 100%;"></iframe>
+                    <iframe frameborder="0" class="embed-responsive-item cjw-video-slide-frame" src="https://player.vimeo.com/video/{$sv_id|wash}?byline=false&title=false&portrait=false&loop=true"></iframe>
                 </div>
 {/if}
         </div>

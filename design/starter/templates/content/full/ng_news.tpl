@@ -49,7 +49,7 @@
 {if $fn_body}
                 </div>
             </div>
-            <div style="clear: both"></div>
+            <div class="cjw-clear"></div>
 {/if}
 {if $fn_all}
     </article>

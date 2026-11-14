@@ -28,7 +28,7 @@
                     {/if}
                 </div>
 
-                <div style="clear: both"></div>
+                <div class="cjw-clear"></div>
 
     </article>
 {undef $lf_dm $lf_has_rm}

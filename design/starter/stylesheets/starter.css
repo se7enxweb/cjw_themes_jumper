@@ -142,3 +142,14 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 }
 .view-type-accordion.vl10 .accordion-body p:last-child { margin-bottom: 0; }
 .view-type-accordion.vl10 .short + .read-more { display: inline-block; margin-top: .75rem; }
+
+/* Fixed styles of the starter templates, which they carried inline before (style=""); only computed values
+   (a background image, a width from the content) stay inline, and the mail templates (content/form/email.tpl),
+   whose mail clients read no stylesheet. */
+.cjw-clear { clear: both; }
+.cjw-clear-line { height: 1px; }
+.cjw-video-slide-link { position: relative; display: inline-block; }
+.cjw-video-slide-frame { width: 100%; }
+.custom-button .btn.cjw-btn-static:not(:disabled) { cursor: default; }
+/* the honeypot field of the forms: out of sight, but not display:none (bots skip hidden fields) */
+.cjw-form-hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }

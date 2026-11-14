@@ -22,7 +22,7 @@
 {/if}
 {if $vp_type|contains( 'upload' )}
     {if and( is_set( $vp_map.video_file ), $vp_map.video_file.has_content )}
-            <div class="video-config video-local-{$vp_node.contentobject_id}"{if $vp_slide} style="display: none;"{/if}
+            <div class="video-config video-local-{$vp_node.contentobject_id}"{if $vp_slide} hidden{/if}
                  data-video_player_id="video-local-{$vp_node.contentobject_id}"
                  {if $vp_slide|not}data-width="770"
                  data-height="433"

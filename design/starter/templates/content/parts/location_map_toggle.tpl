@@ -13,7 +13,7 @@
                                 <div class="content">
                                     {include uri='design:content/parts/leaflet_map_single.tpl' lm_node=$lm_node}
 
-                                    <div style="clear: both; height: 1px;"></div>
+                                    <div class="cjw-clear cjw-clear-line"></div>
                                 </div>
                             </div>
 {/if}

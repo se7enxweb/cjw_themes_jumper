@@ -16,7 +16,7 @@
 {if ezini_hasvariable( 'ContainerView', 'ShowEventList', 'cjw_tmv.ini' )}{include uri='design:cjw_tmv/container.tpl' node=$node}{/if}
                 </div>
             </div>
-            <div style="clear: both"></div>
+            <div class="cjw-clear"></div>
 {/if}
 {if $ft_part|eq( 'content' )}
     </article>

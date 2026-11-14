@@ -12,7 +12,7 @@
         </article>
 {else}
         <article class="view-type view-type-button custom-button">
-            <span class="btn {first_set( $block.view_type, '' )|wash}" style="cursor: default;">
+            <span class="btn {first_set( $block.view_type, '' )|wash} cjw-btn-static">
                 {$bc_text|wash}
             </span>
         </article>

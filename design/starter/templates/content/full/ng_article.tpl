@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div style="clear: both"></div>
+            <div class="cjw-clear"></div>
 {/if}
 {if $fa_all}
     </article>

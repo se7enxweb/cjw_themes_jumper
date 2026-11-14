@@ -4,7 +4,7 @@
 <div class="d-none d-lg-block">{$content}</div><div class="toggle-block state-closed close-others has-custom-title mobil d-lg-none">
 <div class="content">
 {$content}
-<div style="clear: both; height: 1px;"></div>
+<div class="cjw-clear cjw-clear-line"></div>
 </div>
 <div class="control">
 <span class="text-is-closed">{first_set( $Name, '' )|wash}</span><span class="text-is-opened">{first_set( $Name, '' )|wash}</span>
