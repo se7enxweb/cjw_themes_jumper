@@ -22,7 +22,13 @@
 {def $bk_css_pre = hash( 'title_centered', 'text-center ', 'centered', 'text-center ', 'section', 'section-title ',
                          'section_centered', 'section-title section-title-centered ', 'list_numbered', 'list-numbered ' )}
 {set $bk_css_pre = cond( $bk_def|eq( 'ezcontent_field' ), concat( 'field-', first_set( $bk_params.field_identifier, '' ), ' ' ), first_set( $bk_css_pre[$bk_vt], '' ) )}
-{def $bk_classes = concat( 'ngl-block ngl-', cond( $bk_def|eq( 'tpl_block' ), 'twig_block', $bk_def ),
+{* The blocks of their own for a list or gallery view type (the toolbox's Zig-Zag, Accordion, Slider, Grid gallery,
+   Thumb gallery) are drawn by the list and gallery templates and carry their class (ngl-list, ngl-gallery), so
+   app.css (whitespace) and nglayouts-standard.js (lightbox) treat them as the list and gallery blocks. *}
+{def $bk_def_class = hash( 'tpl_block', 'twig_block', 'list_zigzag', 'list', 'list_accordion', 'list',
+                           'slider', 'gallery', 'grid_gallery', 'gallery', 'thumb_gallery', 'gallery' )}
+{set $bk_def_class = first_set( $bk_def_class[$bk_def], $bk_def )}
+{def $bk_classes = concat( 'ngl-block ngl-', $bk_def_class,
                            ' ngl-vt-', cond( $bk_vt|eq( 'tpl_block' ), 'twig_block', $bk_vt ), ' ', $bk_css_pre, first_set( $bk_params.css_class, '' ) )}
 {undef $bk_css_pre}
 {* Vertical whitespace as in Jac-Example's wrapper (design cjw_app, nglayouts/themes/cjw_app/block/block.html.twig):
@@ -39,7 +45,8 @@
 {* item-view-<item view type>, as list/_item.tpl draws it: the view types with one item view only (grid tiles, the
    galleries, zig-zag, accordion) always print that one, whatever item view the block kept from an earlier view type
    (app.css styles item-view-tile, item-view-gallery_grid ...); zigzag and accordion count for their list view types
-   only, elsewhere item-view-standard. *}
+   only, elsewhere item-view-standard. A list or gallery block that stores no item view prints the one its templates
+   draw then: standard for a list, slide for a gallery (gallery.tpl draws an unknown view type as the slider). *}
 {def $bk_ivt = first_set( $bk_block.item_view_type, '' )
      $bk_fixed = hash( 'grid_tiles', 'tile', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
                      'carousel', 'carousel', 'grid_gallery', 'gallery_grid', 'slider', 'slide', 'thumb_gallery', 'gallery_thumb',
@@ -48,6 +55,10 @@
     {set $bk_ivt = $bk_fixed[$bk_vt]}
 {elseif and( array( 'zigzag', 'accordion' )|contains( $bk_ivt ), array( 'list_zigzag', 'list_accordion' )|contains( $bk_vt )|not )}
     {set $bk_ivt = 'standard'}
+{elseif and( $bk_ivt|eq( '' ), $bk_def_class|eq( 'list' ) )}
+    {set $bk_ivt = 'standard'}
+{elseif and( $bk_ivt|eq( '' ), $bk_def_class|eq( 'gallery' ) )}
+    {set $bk_ivt = 'slide'}
 {/if}
     <div
         class="{$bk_classes|wash} item-view-{$bk_ivt|wash}"
@@ -57,6 +68,6 @@
 {$bk_html}
         {if first_set( $bk_params.set_container, false() )}</div>{/if}
     </div>
-{undef $bk_def $bk_vt $bk_params $bk_classes $bk_ivt $bk_fixed}
+{undef $bk_def $bk_vt $bk_params $bk_classes $bk_ivt $bk_fixed $bk_def_class}
 {/if}
 {undef $bk_block $bk_html}
