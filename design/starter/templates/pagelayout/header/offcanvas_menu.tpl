@@ -1,7 +1,8 @@
 {* The offcanvas menu (v2: themes/cjw_app/parts/offcanvas_menu.html.twig): the children of the root node of the
    siteaccess by priority, the top list below [Menu] BreakPriority and the bottom list from it on
-   (cjw_jumper.ini). Built from the content tree alone, so it fills in as content arrives. The language switcher
-   closes the bottom list (on the phone the top links are hidden). *}
+   (cjw_jumper.ini); the nodes of [Menu] AdditionalNodeIDs close the top list. Built from the content tree
+   alone, so it fills in as content arrives. The language switcher closes the bottom list (on the phone the top
+   links are hidden). *}
 {def $oc_lists = hash( 'top', array(), 'bottom', array() )}
 {if $pl_root_node}
     {set $oc_lists = hash(
@@ -13,6 +14,14 @@
                                                   'limit', ezini( 'Menu', 'Limit', 'cjw_jumper.ini' ),
                                                   'attribute_filter', array( 'and', array( 'priority', '>=', ezini( 'Menu', 'BreakPriority', 'cjw_jumper.ini' ) ),
                                                                                     array( 'priority', '<=', ezini( 'Menu', 'MaxPriority', 'cjw_jumper.ini' ) ) ) ) ) )}
+{/if}
+{* [Menu] AdditionalNodeIDs: further nodes at the end of the top list, from anywhere in the tree *}
+{if ezini_hasvariable( 'Menu', 'AdditionalNodeIDs', 'cjw_jumper.ini' )}
+{foreach ezini( 'Menu', 'AdditionalNodeIDs', 'cjw_jumper.ini' ) as $oc_extra_id}
+    {def $oc_extra = fetch( 'content', 'node', hash( 'node_id', $oc_extra_id ) )}
+    {if and( $oc_extra, $oc_extra.can_read )}{set $oc_lists = $oc_lists|merge( hash( 'top', $oc_lists.top|append( $oc_extra ) ) )}{/if}
+    {undef $oc_extra}
+{/foreach}
 {/if}
 <div class="navbar-collapse offcanvas-collapse" id="offcanvas-menu">
 

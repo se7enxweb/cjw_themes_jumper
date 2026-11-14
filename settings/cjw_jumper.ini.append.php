@@ -48,6 +48,9 @@ TopMinPriority=0
 BreakPriority=999
 MaxPriority=2000
 Limit=100
+# AdditionalNodeIDs[]: further nodes at the end of the top list, wherever
+# they are in the tree. Set only in settings/siteaccess/<siteaccess> (e.g.
+# the showcase of starter_ger): a reset here would be read after it.
 
 [Footer]
 Logo=logos/small.png
