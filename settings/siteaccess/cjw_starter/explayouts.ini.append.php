@@ -107,6 +107,7 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
 # One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
 ViewTypeItemViewTypes[carousel]=carousel
@@ -121,7 +122,7 @@ HiddenParameters[]=thumbnail_size
 # would fall back to the slider), and the Netgen site had no gallery view type: not offered.
 HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
 # The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
 # (as the Netgen site, whose valid_parameters left both out for them)
@@ -145,6 +146,7 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
 # One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
 ViewTypeItemViewTypes[carousel]=carousel
@@ -159,7 +161,7 @@ HiddenParameters[]=thumbnail_size
 # would fall back to the slider), and the Netgen site had no gallery view type: not offered.
 HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
 # The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
 # (as the Netgen site, whose valid_parameters left both out for them)
@@ -180,6 +182,7 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
 # One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
 ViewTypeItemViewTypes[carousel]=carousel
@@ -194,7 +197,7 @@ HiddenParameters[]=thumbnail_size
 # would fall back to the slider), and the Netgen site had no gallery view type: not offered.
 HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
 # The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
 # (as the Netgen site, whose valid_parameters left both out for them)
@@ -215,6 +218,7 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
 # One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
 ViewTypeItemViewTypes[carousel]=carousel
@@ -229,7 +233,7 @@ HiddenParameters[]=thumbnail_size
 # would fall back to the slider), and the Netgen site had no gallery view type: not offered.
 HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
 # The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
 # (as the Netgen site, whose valid_parameters left both out for them)
