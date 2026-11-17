@@ -70,14 +70,26 @@ ItemViewTypes[40_60_img_left_plus_list]=Line 40/60 (image left, with list)
 ItemViewTypes[flexline]=Flexline
 ItemViewTypes[zigzag]=Zig-zag
 ItemViewTypes[accordion]=Accordion
+# The item view types each view type draws, as on the Netgen site (ViewTypeItemViewTypes[], with an explayouts that
+# reads it; an older one offers every item view type for every view type): the layout editor offers a view type
+# only these, and shows no select where one is left (grid_featured, grid_tiles, the zig-zag, the accordion).
+ViewTypeItemViewTypes[list]=standard,standard_with_intro,overlay,mini,listitem,listitem_with_intro,line,line_il,line_x,line_h,line_h_il,line_h_x,line_50_50_il,line_50_50_ir,line_50_50_x,line_30_70_il,line_30_70_ir,line_30_70_x,line_full_il,40_60_img_left_plus_list,flexline,card,card_with_intro
+ViewTypeItemViewTypes[list_numbered]=standard,standard_with_intro,overlay,mini,listitem,listitem_with_intro,line,line_il,line_x,line_h,line_h_il,line_h_x,line_50_50_il,line_50_50_ir,line_50_50_x,line_30_70_il,line_30_70_ir,line_30_70_x,line_full_il,40_60_img_left_plus_list,flexline,card,card_with_intro
+ViewTypeItemViewTypes[grid]=standard,standard_with_intro,teaser_bg_matrix,teaser_bg_white,overlay,event,button,card,card_with_intro
+ViewTypeItemViewTypes[grid_featured]=overlay
+ViewTypeItemViewTypes[grid_tiles]=tile
+ViewTypeItemViewTypes[list_zigzag]=zigzag
+ViewTypeItemViewTypes[list_accordion]=accordion
 
 # The zig-zag and the accordion as blocks of their own (toolbox): drawn by the starter's list templates
 # (design/starter/templates/explayouts/block/list_zigzag.tpl, list_accordion.tpl), each in its one item view.
 [BlockDefinition_list_zigzag]
 ItemViewTypes[zigzag]=Zig-zag
+ViewTypeItemViewTypes[list_zigzag]=zigzag
 
 [BlockDefinition_list_accordion]
 ItemViewTypes[accordion]=Accordion
+ViewTypeItemViewTypes[list_accordion]=accordion
 
 [BlockDefinition_gallery]
 ViewTypes[]=carousel
@@ -96,6 +108,16 @@ ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
 
 # The gallery variants as blocks of their own (toolbox): drawn by the starter's gallery templates
 # (design/starter/templates/explayouts/block/slider.tpl, grid_gallery.tpl, thumb_gallery.tpl), with the same
@@ -113,6 +135,16 @@ ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
 
 [BlockDefinition_grid_gallery]
 ViewTypes[]=carousel
@@ -127,6 +159,16 @@ ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
 
 [BlockDefinition_thumb_gallery]
 ViewTypes[]=carousel
@@ -141,6 +183,16 @@ ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
 
 [BlockSettings]
 AvailableBlocks[]=ezcontent_field
