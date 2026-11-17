@@ -210,6 +210,8 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 
 /* Overlay (.vl2): the title over the bottom of the image, as on the Netgen site; it had been stretched out of sight */
 .sushi-swiper .swiper-slide .vl2 * { width: auto; height: auto; }
+/* 1rem below the tile instead of the 2rem for a list of them: the pagination sits close below the images */
+.sushi-swiper .swiper-slide .vl2 { margin-bottom: 1rem; }
 .sushi-swiper .swiper-slide .vl2 .image-16by9 { width: 100%; height: 0; }
 .sushi-swiper .swiper-slide .vl2 .image-16by9 img { width: 100%; height: 100%; }
 .sushi-swiper .swiper-slide .vl2 .article-icon { width: 3em; height: 3em; }
