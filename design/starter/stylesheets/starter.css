@@ -170,27 +170,36 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
    the image 16:9 over the whole tile, its middle 0.28125 of the tile width down; Line draws it 40% wide at 4:3 beside
    the text (middle 0.15 down) where a tile is at least 320px wide, else above the text as the others (the min/max
    picks the case: (319.98px - tile) x 1000 is large below 320px and negative from there); Line (image left) as Line. */
-.ngl-vt-sushi_bar .sushi-swiper {
+.ngl-vt-sushi_bar .sushi-swiper,
+.ngl-vt-sushi_bar .sushi-bar-frame {
   container-type: inline-size;
   --sb-cols: var(--sb-n, 6);
   --sb-tile: calc((100cqw - 30px * (var(--sb-cols) - 1)) / var(--sb-cols));
 }
 @media (max-width: 991px) {
-  .ngl-vt-sushi_bar .sushi-swiper { --sb-cols: min(var(--sb-n, 6), 2); }
+  .ngl-vt-sushi_bar .sushi-swiper, .ngl-vt-sushi_bar .sushi-bar-frame { --sb-cols: min(var(--sb-n, 6), 2); }
 }
 @media (max-width: 480px) {
-  .ngl-vt-sushi_bar .sushi-swiper { --sb-cols: 1; }
+  .ngl-vt-sushi_bar .sushi-swiper, .ngl-vt-sushi_bar .sushi-bar-frame { --sb-cols: 1; }
 }
 .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-bar-frame > .swiper-button-prev,
 .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper > .swiper-button-next,
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-bar-frame > .swiper-button-next,
 .ngl-vt-sushi_bar.item-view-overlay .sushi-swiper > .swiper-button-prev,
-.ngl-vt-sushi_bar.item-view-overlay .sushi-swiper > .swiper-button-next {
+.ngl-vt-sushi_bar.item-view-overlay .sushi-bar-frame > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-overlay .sushi-swiper > .swiper-button-next,
+.ngl-vt-sushi_bar.item-view-overlay .sushi-bar-frame > .swiper-button-next {
   top: calc(var(--sb-tile) * .28125);
 }
 .ngl-vt-sushi_bar.item-view-line .sushi-swiper > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-line .sushi-bar-frame > .swiper-button-prev,
 .ngl-vt-sushi_bar.item-view-line .sushi-swiper > .swiper-button-next,
+.ngl-vt-sushi_bar.item-view-line .sushi-bar-frame > .swiper-button-next,
 .ngl-vt-sushi_bar.item-view-line_il .sushi-swiper > .swiper-button-prev,
-.ngl-vt-sushi_bar.item-view-line_il .sushi-swiper > .swiper-button-next {
+.ngl-vt-sushi_bar.item-view-line_il .sushi-bar-frame > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-line_il .sushi-swiper > .swiper-button-next,
+.ngl-vt-sushi_bar.item-view-line_il .sushi-bar-frame > .swiper-button-next {
   top: max(calc(var(--sb-tile) * .15), min(calc(var(--sb-tile) * .28125), calc((319.98px - var(--sb-tile)) * 1000)));
 }
 /* The title under the image follows the width of the tile (a slide is a container, see below): 10% of it, at least
@@ -236,4 +245,12 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
   .sushi-swiper .swiper-slide .vl4 .article-image { order: -1; flex: 0 0 auto; width: 100%; max-width: 100%; }
   .sushi-swiper .swiper-slide .vl4 .article-content { width: 100%; }
   .sushi-swiper .swiper-slide .vl4 .image { padding: 0 0 56.25%; }
+}
+
+/* The frame cjw_jumper_page.js puts around a sushi bar and its buttons: the buttons beside the row from 1250px wide
+   (the content is 1140px wide there, leaving room for a 3rem button and a .5rem gap), inside it as before below. */
+.sushi-bar-frame { overflow: visible; }
+@media (min-width: 1250px) {
+  .sushi-bar-frame > .swiper-button-prev { left: -3.5rem; }
+  .sushi-bar-frame > .swiper-button-next { right: -3.5rem; }
 }
