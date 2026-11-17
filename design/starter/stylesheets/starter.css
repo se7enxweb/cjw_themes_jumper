@@ -153,3 +153,13 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 .custom-button .btn.cjw-btn-static:not(:disabled) { cursor: default; }
 /* the honeypot field of the forms: out of sight, but not display:none (bots skip hidden fields) */
 .cjw-form-hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+/* The sushi bar draws its items in an item view (standard_with_intro, overlay or line). nglayouts-standard.css sizes
+   every element of a swiper slide to the slide (.swiper-container .swiper-slide *, meant for slides of one image),
+   which stretched the camera icon of an image's standard view over the whole tile and hid its image and title. The
+   item views keep their own sizes here. */
+.sushi-swiper .swiper-slide .vl1 * { width: auto; height: auto; }
+.sushi-swiper .swiper-slide .vl1 .image { width: 100%; height: 0; }
+.sushi-swiper .swiper-slide .vl1 .image a { width: 100%; height: 100%; }
+.sushi-swiper .swiper-slide .vl1 .image img { width: 100%; height: 100%; }
+.sushi-swiper .swiper-slide .vl1 .article-icon { width: 3rem; height: 3rem; }
