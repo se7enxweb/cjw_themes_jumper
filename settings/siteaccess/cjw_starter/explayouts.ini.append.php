@@ -113,16 +113,27 @@ ViewTypeItemViewTypes[carousel]=carousel
 ViewTypeItemViewTypes[slider]=slide
 ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
 ViewTypeItemViewTypes[grid_gallery]=gallery_grid
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
 # The starter's gallery templates draw their items with the item views, not with the image attribute and the
 # thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
 HiddenParameters[]=image_attribute
 HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 # The gallery variants as blocks of their own (toolbox): drawn by the starter's gallery templates
 # (design/starter/templates/explayouts/block/slider.tpl, grid_gallery.tpl, thumb_gallery.tpl), with the same
 # item views as the gallery block.
 [BlockDefinition_slider]
+# its own view type first, as explayouts lists it (a new block gets the first one)
+ViewTypes[]=slider
 ViewTypes[]=carousel
 ViewTypeNames[carousel]=Carousel
 ItemViewTypes[carousel]=Carousel
@@ -140,13 +151,24 @@ ViewTypeItemViewTypes[carousel]=carousel
 ViewTypeItemViewTypes[slider]=slide
 ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
 ViewTypeItemViewTypes[grid_gallery]=gallery_grid
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
 # The starter's gallery templates draw their items with the item views, not with the image attribute and the
 # thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
 HiddenParameters[]=image_attribute
 HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockDefinition_grid_gallery]
+# its own view type first, as explayouts lists it (a new block gets the first one)
+ViewTypes[]=grid_gallery
 ViewTypes[]=carousel
 ViewTypeNames[carousel]=Carousel
 ItemViewTypes[carousel]=Carousel
@@ -164,13 +186,24 @@ ViewTypeItemViewTypes[carousel]=carousel
 ViewTypeItemViewTypes[slider]=slide
 ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
 ViewTypeItemViewTypes[grid_gallery]=gallery_grid
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
 # The starter's gallery templates draw their items with the item views, not with the image attribute and the
 # thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
 HiddenParameters[]=image_attribute
 HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockDefinition_thumb_gallery]
+# its own view type first, as explayouts lists it (a new block gets the first one)
+ViewTypes[]=thumb_gallery
 ViewTypes[]=carousel
 ViewTypeNames[carousel]=Carousel
 ItemViewTypes[carousel]=Carousel
@@ -188,11 +221,20 @@ ViewTypeItemViewTypes[carousel]=carousel
 ViewTypeItemViewTypes[slider]=slide
 ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
 ViewTypeItemViewTypes[grid_gallery]=gallery_grid
-ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
 # The starter's gallery templates draw their items with the item views, not with the image attribute and the
 # thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
 HiddenParameters[]=image_attribute
 HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockSettings]
 AvailableBlocks[]=ezcontent_field
