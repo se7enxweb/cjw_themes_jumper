@@ -124,9 +124,9 @@ HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
 ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
-# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
-# (as the Netgen site, whose valid_parameters left both out for them)
-ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+# The thumb gallery draws its own thumbnails, and neither it nor the slider opens a lightbox (as the Netgen site,
+# whose valid_parameters left both out for them); the slider shows Thumbnails per row/slide side by side (slider.tpl)
+ViewTypeHiddenParameters[slider]=enable_lightbox
 ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 # The gallery variants as blocks of their own (toolbox): drawn by the starter's gallery templates
@@ -163,9 +163,9 @@ HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
 ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
-# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
-# (as the Netgen site, whose valid_parameters left both out for them)
-ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+# The thumb gallery draws its own thumbnails, and neither it nor the slider opens a lightbox (as the Netgen site,
+# whose valid_parameters left both out for them); the slider shows Thumbnails per row/slide side by side (slider.tpl)
+ViewTypeHiddenParameters[slider]=enable_lightbox
 ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockDefinition_grid_gallery]
@@ -199,9 +199,9 @@ HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
 ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
-# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
-# (as the Netgen site, whose valid_parameters left both out for them)
-ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+# The thumb gallery draws its own thumbnails, and neither it nor the slider opens a lightbox (as the Netgen site,
+# whose valid_parameters left both out for them); the slider shows Thumbnails per row/slide side by side (slider.tpl)
+ViewTypeHiddenParameters[slider]=enable_lightbox
 ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockDefinition_thumb_gallery]
@@ -235,9 +235,9 @@ HiddenViewTypes[]=gallery
 # The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
 ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
 ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
-# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
-# (as the Netgen site, whose valid_parameters left both out for them)
-ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+# The thumb gallery draws its own thumbnails, and neither it nor the slider opens a lightbox (as the Netgen site,
+# whose valid_parameters left both out for them); the slider shows Thumbnails per row/slide side by side (slider.tpl)
+ViewTypeHiddenParameters[slider]=enable_lightbox
 ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockSettings]
