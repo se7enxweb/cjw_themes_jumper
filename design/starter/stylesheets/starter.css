@@ -178,3 +178,12 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 @media (max-width: 480px) {
   .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { --sb-cols: 1; }
 }
+/* The title under the image follows the width of the tile: 10% of it, at least 1rem, at most the 1.25rem of the view
+   elsewhere (a tile of six per view is about 160px wide, the title then 16px). */
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper .vl1 .title {
+  font-size: clamp(1rem, (100cqw - 30px * (var(--sb-cols) - 1)) / var(--sb-cols) * .1, 1.25rem);
+  line-height: 1.3;
+}
+/* The pagination below the items, not over them (swiper places it 10px above the bottom of the row) */
+.sushi-swiper:has(> .swiper-pagination) { padding-bottom: 1.75rem; }
+.sushi-swiper > .swiper-pagination { bottom: 0; }
