@@ -164,25 +164,37 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 .sushi-swiper .swiper-slide .vl1 .image img { width: 100%; height: 100%; }
 .sushi-swiper .swiper-slide .vl1 .article-icon { width: 3rem; height: 3rem; }
 .sushi-swiper .swiper-slide .vl1 .title { overflow-wrap: anywhere; }
-/* In the view Standard (with intro) the image (16:9) is on top of the title: the previous and next buttons sit at the
-   middle of the image, not of the whole tile. A tile is (row width - 30px gap x (n - 1)) / n wide, n the items per view
-   (--sb-n from the template; nglayouts-standard.js shows at most 2 up to 991px and 1 up to 480px wide), and the
-   middle of its image 0.28125 of that down. */
-.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { container-type: inline-size; --sb-cols: var(--sb-n, 6); }
-.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper .swiper-button-prev,
-.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper .swiper-button-next {
-  top: calc((100cqw - 30px * (var(--sb-cols) - 1)) / var(--sb-cols) * .28125);
+/* The previous and next buttons sit at the middle of the image, not of the whole row. The row is a container, so
+   the width of a tile is known: (row width - 30px gap x (n - 1)) / n, n the items per view (--sb-n from the template;
+   nglayouts-standard.js shows at most 2 up to 991px and 1 up to 480px wide). Standard (with intro) and Overlay draw
+   the image 16:9 over the whole tile, its middle 0.28125 of the tile width down; Line draws it 40% wide at 4:3 beside
+   the text (middle 0.15 down) where a tile is at least 320px wide, else above the text as the others (the min/max
+   picks the case: (319.98px - tile) x 1000 is large below 320px and negative from there). */
+.ngl-vt-sushi_bar .sushi-swiper {
+  container-type: inline-size;
+  --sb-cols: var(--sb-n, 6);
+  --sb-tile: calc((100cqw - 30px * (var(--sb-cols) - 1)) / var(--sb-cols));
 }
 @media (max-width: 991px) {
-  .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { --sb-cols: min(var(--sb-n, 6), 2); }
+  .ngl-vt-sushi_bar .sushi-swiper { --sb-cols: min(var(--sb-n, 6), 2); }
 }
 @media (max-width: 480px) {
-  .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { --sb-cols: 1; }
+  .ngl-vt-sushi_bar .sushi-swiper { --sb-cols: 1; }
 }
-/* The title under the image follows the width of the tile: 10% of it, at least 1rem, at most the 1.25rem of the view
-   elsewhere (a tile of six per view is about 160px wide, the title then 16px). */
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper > .swiper-button-next,
+.ngl-vt-sushi_bar.item-view-overlay .sushi-swiper > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-overlay .sushi-swiper > .swiper-button-next {
+  top: calc(var(--sb-tile) * .28125);
+}
+.ngl-vt-sushi_bar.item-view-line .sushi-swiper > .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-line .sushi-swiper > .swiper-button-next {
+  top: max(calc(var(--sb-tile) * .15), min(calc(var(--sb-tile) * .28125), calc((319.98px - var(--sb-tile)) * 1000)));
+}
+/* The title under the image follows the width of the tile (a slide is a container, see below): 10% of it, at least
+   1rem, at most the 1.25rem of the view elsewhere (a tile of six per view is about 160px wide, the title then 16px). */
 .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper .vl1 .title {
-  font-size: clamp(1rem, (100cqw - 30px * (var(--sb-cols) - 1)) / var(--sb-cols) * .1, 1.25rem);
+  font-size: clamp(1rem, 10cqw, 1.25rem);
   line-height: 1.3;
 }
 /* The pagination below the items, not over them (swiper places it 10px above the bottom of the row) */
