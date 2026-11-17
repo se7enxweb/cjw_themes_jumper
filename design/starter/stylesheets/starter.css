@@ -163,3 +163,18 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 .sushi-swiper .swiper-slide .vl1 .image a { width: 100%; height: 100%; }
 .sushi-swiper .swiper-slide .vl1 .image img { width: 100%; height: 100%; }
 .sushi-swiper .swiper-slide .vl1 .article-icon { width: 3rem; height: 3rem; }
+/* In the view Standard (with intro) the image (16:9) is on top of the title: the previous and next buttons sit at the
+   middle of the image, not of the whole tile. A tile is (row width - 30px gap x (n - 1)) / n wide, n the items per view
+   (--sb-n from the template; nglayouts-standard.js shows at most 2 up to 991px and 1 up to 480px wide), and the
+   middle of its image 0.28125 of that down. */
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { container-type: inline-size; --sb-cols: var(--sb-n, 6); }
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper .swiper-button-prev,
+.ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper .swiper-button-next {
+  top: calc((100cqw - 30px * (var(--sb-cols) - 1)) / var(--sb-cols) * .28125);
+}
+@media (max-width: 991px) {
+  .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { --sb-cols: min(var(--sb-n, 6), 2); }
+}
+@media (max-width: 480px) {
+  .ngl-vt-sushi_bar.item-view-standard_with_intro .sushi-swiper { --sb-cols: 1; }
+}
