@@ -49,7 +49,7 @@
    draw then: standard for a list, standard_with_intro for a sushi bar, slide for another gallery (gallery.tpl draws an
    unknown view type as the slider). *}
 {def $bk_ivt = first_set( $bk_block.item_view_type, '' )
-     $bk_fixed = hash( 'grid_tiles', 'tile', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
+     $bk_fixed = hash( 'grid_tiles', 'tile', 'grid_featured', 'overlay', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
                      'carousel', 'carousel', 'grid_gallery', 'gallery_grid', 'slider', 'slide', 'thumb_gallery', 'gallery_thumb',
                      'grid_gallery_fixed_height', 'gallery_grid_fixed_height', 'grid_gallery_fixed_width', 'gallery_grid_fixed_width' )}
 {if is_set( $bk_fixed[$bk_vt] )}

@@ -246,6 +246,18 @@ ViewTypes[]=image
 
 [BlockDefinition_button]
 ViewTypes[]=button_custom
+# As on the Netgen site: Netgen's own button (button/button.tpl) and the three coloured CJW buttons (drawn by
+# button/button_custom.tpl, whose class is the view type; app.css colours them)
+ViewTypes[]=button
+ViewTypes[]=button_lightblue
+ViewTypes[]=button_blue
+ViewTypes[]=button_green
+ViewTypeNames[button]=Button / Link
+ViewTypeNames[button_lightblue]=Button Hellblau
+ViewTypeNames[button_blue]=Button Blau
+ViewTypeNames[button_green]=Button Grün
+# explayouts' default: the starter draws it as button_custom, the Netgen site had none
+HiddenViewTypes[]=default
 
 # v2's ezcontent_field block: one field of the current content (the home page
 # shows its teaser_intro this way)
