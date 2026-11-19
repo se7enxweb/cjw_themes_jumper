@@ -46,9 +46,10 @@
    galleries, zig-zag, accordion) always print that one, whatever item view the block kept from an earlier view type
    (app.css styles item-view-tile, item-view-gallery_grid ...); zigzag and accordion count for their list view types
    only, elsewhere item-view-standard. A list or gallery block that stores no item view prints the one its templates
-   draw then: standard for a list, slide for a gallery (gallery.tpl draws an unknown view type as the slider). *}
+   draw then: standard for a list, standard_with_intro for a sushi bar, slide for another gallery (gallery.tpl draws an
+   unknown view type as the slider). *}
 {def $bk_ivt = first_set( $bk_block.item_view_type, '' )
-     $bk_fixed = hash( 'grid_tiles', 'tile', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
+     $bk_fixed = hash( 'grid_tiles', 'tile', 'grid_featured', 'overlay', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
                      'carousel', 'carousel', 'grid_gallery', 'gallery_grid', 'slider', 'slide', 'thumb_gallery', 'gallery_thumb',
                      'grid_gallery_fixed_height', 'gallery_grid_fixed_height', 'grid_gallery_fixed_width', 'gallery_grid_fixed_width' )}
 {if is_set( $bk_fixed[$bk_vt] )}
@@ -57,6 +58,8 @@
     {set $bk_ivt = 'standard'}
 {elseif and( $bk_ivt|eq( '' ), $bk_def_class|eq( 'list' ) )}
     {set $bk_ivt = 'standard'}
+{elseif and( $bk_ivt|eq( '' ), $bk_vt|eq( 'sushi_bar' ) )}
+    {set $bk_ivt = 'standard_with_intro'}
 {elseif and( $bk_ivt|eq( '' ), $bk_def_class|eq( 'gallery' ) )}
     {set $bk_ivt = 'slide'}
 {/if}
