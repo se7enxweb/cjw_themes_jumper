@@ -38,15 +38,31 @@
 {elseif $vp_id|ne( '' )}
     {* Nothing is loaded from a video service before the visitor asks: YouTube through the click-to-load
        player (youtube_player.tpl, consent tied to the cookie banner); Vimeo and Dailymotion, which have no
-       consent player here, as a plain link to the video instead of v2's iframe. *}
-    {if $vp_type|contains( 'vimeo' )}
-            <div class="video-vimeo">
-                <a href="https://vimeo.com/{$vp_id|wash}" target="_blank" rel="noopener noreferrer">{$vp_node.name|wash}</a>
+       consent player here, as a link to the video instead of v2's iframe, drawn as a preview: the video's
+       poster, else a local copy of the service's thumbnail (video_thumbnail, fetched once by the server, so the
+       visitor loads nothing from the service), else the design's video poster; with the play button and the
+       title of the YouTube player (exp-youtube-consent.css). *}
+    {if or( $vp_type|contains( 'vimeo' ), $vp_type|contains( 'dailymotion' ) )}
+        {def $vp_service = cond( $vp_type|contains( 'vimeo' ), 'vimeo', 'dailymotion' )
+             $vp_href = cond( $vp_service|eq( 'vimeo' ), concat( 'https://vimeo.com/', $vp_id ), concat( 'https://www.dailymotion.com/video/', $vp_id ) )
+             $vp_preview = $vp_image}
+        {if and( is_set( $vp_map.poster ), $vp_map.poster.has_content )|not}
+            {def $vp_thumb = video_thumbnail( $vp_service, $vp_id )}
+            {if $vp_thumb|ne( '' )}{set $vp_preview = $vp_thumb|ezroot( 'no' )}{/if}
+            {undef $vp_thumb}
+        {/if}
+        {ezcss_require( 'exp-youtube-consent.css' )}
+            <div class="video-{$vp_service} exp-yt">
+                <div class="exp-yt-frame ratio ratio-16x9">
+                    <a class="exp-yt-poster" href="{$vp_href|wash}" target="_blank" rel="noopener noreferrer"
+                       aria-label="{'Play video: %title'|i18n( 'design/starter/media', '', hash( '%title', $vp_node.name ) )|wash}">
+                        <img src="{$vp_preview}" alt="" width="640" height="360" decoding="async">
+                        <span class="exp-yt-play" aria-hidden="true"></span>
+                        <span class="exp-yt-title" aria-hidden="true">{$vp_node.name|wash}</span>
+                    </a>
+                </div>
             </div>
-    {elseif $vp_type|contains( 'dailymotion' )}
-            <div class="video-dailymotion">
-                <a href="https://www.dailymotion.com/video/{$vp_id|wash}" target="_blank" rel="noopener noreferrer">{$vp_node.name|wash}</a>
-            </div>
+        {undef $vp_service $vp_href $vp_preview}
     {else}
             <div class="video-youtube">
                 {include uri='design:content/parts/youtube_player.tpl' yt_id=$vp_id yt_title=$vp_node.name}
