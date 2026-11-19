@@ -268,3 +268,7 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
   .sushi-bar-frame > .swiper-button-prev { left: -3.5rem; }
   .sushi-bar-frame > .swiper-button-next { right: -3.5rem; }
 }
+
+/* The slider's pagination (slick dots) sits above the slider's bottom line, not 25px below it (slick's place) */
+.ngl-gallery .slick-slider.has-dots { padding-bottom: 2.75rem; }
+.ngl-gallery .slick-slider.has-dots .slick-dots { bottom: 1rem; }
