@@ -272,3 +272,10 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 /* The slider's pagination (slick dots) sits above the slider's bottom line, not 25px below it (slick's place) */
 .ngl-gallery .slick-slider.has-dots { padding-bottom: 2.75rem; }
 .ngl-gallery .slick-slider.has-dots .slick-dots { bottom: 1rem; }
+
+/* The slider: every image of one height (4:3, the proportions of most photos, filling it without distortion, cut at the
+   edges where needed), whatever
+   the proportions of the image, and the text under it .75rem below it */
+.ngl-vt-slider .slick-slide img.ezimage-field { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.ngl-vt-slider .slick-slide .info,
+.ngl-vt-slider .slick-slide .ezxmltext-field { margin-top: .75rem; }
