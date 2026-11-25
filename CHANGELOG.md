@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.16 (2026-11-25)
+
+- Updated: The starter design offers each view type the item views it draws, Grid (featured), the buttons and the sushi bar of the media site reference again (pull request #10).
+- Fixed: The sushi bar takes its items per view from data-slides-per-view through starter.css (1 to 12, else 6) instead of an inline style on the row and the frame.
+- Added: A CI workflow (php -l on PHP 7.4 and 8.0 to 8.5, extension.xml, version parity).
+
 ## 0.1.15 (2026-11-14)
 
 Pull requests #2 (Marco-JAC) and #3 to #8 (vmeyke), merged and completed. The view types, item views and settings
