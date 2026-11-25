@@ -70,14 +70,26 @@ ItemViewTypes[40_60_img_left_plus_list]=Line 40/60 (image left, with list)
 ItemViewTypes[flexline]=Flexline
 ItemViewTypes[zigzag]=Zig-zag
 ItemViewTypes[accordion]=Accordion
+# The item view types each view type draws, as on the Netgen site (ViewTypeItemViewTypes[], with an explayouts that
+# reads it; an older one offers every item view type for every view type): the layout editor offers a view type
+# only these, and shows no select where one is left (grid_featured, grid_tiles, the zig-zag, the accordion).
+ViewTypeItemViewTypes[list]=standard,standard_with_intro,overlay,mini,listitem,listitem_with_intro,line,line_il,line_x,line_h,line_h_il,line_h_x,line_50_50_il,line_50_50_ir,line_50_50_x,line_30_70_il,line_30_70_ir,line_30_70_x,line_full_il,40_60_img_left_plus_list,flexline,card,card_with_intro
+ViewTypeItemViewTypes[list_numbered]=standard,standard_with_intro,overlay,mini,listitem,listitem_with_intro,line,line_il,line_x,line_h,line_h_il,line_h_x,line_50_50_il,line_50_50_ir,line_50_50_x,line_30_70_il,line_30_70_ir,line_30_70_x,line_full_il,40_60_img_left_plus_list,flexline,card,card_with_intro
+ViewTypeItemViewTypes[grid]=standard,standard_with_intro,teaser_bg_matrix,teaser_bg_white,overlay,event,button,card,card_with_intro
+ViewTypeItemViewTypes[grid_featured]=overlay
+ViewTypeItemViewTypes[grid_tiles]=tile
+ViewTypeItemViewTypes[list_zigzag]=zigzag
+ViewTypeItemViewTypes[list_accordion]=accordion
 
 # The zig-zag and the accordion as blocks of their own (toolbox): drawn by the starter's list templates
 # (design/starter/templates/explayouts/block/list_zigzag.tpl, list_accordion.tpl), each in its one item view.
 [BlockDefinition_list_zigzag]
 ItemViewTypes[zigzag]=Zig-zag
+ViewTypeItemViewTypes[list_zigzag]=zigzag
 
 [BlockDefinition_list_accordion]
 ItemViewTypes[accordion]=Accordion
+ViewTypeItemViewTypes[list_accordion]=accordion
 
 [BlockDefinition_gallery]
 ViewTypes[]=carousel
@@ -95,12 +107,34 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 # The gallery variants as blocks of their own (toolbox): drawn by the starter's gallery templates
 # (design/starter/templates/explayouts/block/slider.tpl, grid_gallery.tpl, thumb_gallery.tpl), with the same
 # item views as the gallery block.
 [BlockDefinition_slider]
+# its own view type first, as explayouts lists it (a new block gets the first one)
+ViewTypes[]=slider
 ViewTypes[]=carousel
 ViewTypeNames[carousel]=Carousel
 ItemViewTypes[carousel]=Carousel
@@ -112,9 +146,31 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockDefinition_grid_gallery]
+# its own view type first, as explayouts lists it (a new block gets the first one)
+ViewTypes[]=grid_gallery
 ViewTypes[]=carousel
 ViewTypeNames[carousel]=Carousel
 ItemViewTypes[carousel]=Carousel
@@ -126,9 +182,31 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockDefinition_thumb_gallery]
+# its own view type first, as explayouts lists it (a new block gets the first one)
+ViewTypes[]=thumb_gallery
 ViewTypes[]=carousel
 ViewTypeNames[carousel]=Carousel
 ItemViewTypes[carousel]=Carousel
@@ -140,7 +218,27 @@ ItemViewTypes[standard_with_intro]=Standard (with intro)
 ItemViewTypes[card]=Card
 ItemViewTypes[card_with_intro]=Card (with intro)
 ItemViewTypes[line]=Line (image right)
+ItemViewTypes[line_il]=Line (image left)
 ItemViewTypes[overlay]=Overlay
+# One item view per view type, as on the Netgen site: the layout editor shows no item view type select for them.
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[slider]=slide
+ViewTypeItemViewTypes[thumb_gallery]=gallery_thumb
+ViewTypeItemViewTypes[grid_gallery]=gallery_grid
+# The starter's gallery templates draw their items with the item views, not with the image attribute and the
+# thumbnail size of the gallery block (explayouts' standard gallery templates read them): not offered.
+HiddenParameters[]=image_attribute
+HiddenParameters[]=thumbnail_size
+# explayouts adds the view type gallery to every gallery definition; the starter's gallery.tpl does not draw it (it
+# would fall back to the slider), and the Netgen site had no gallery view type: not offered.
+HiddenViewTypes[]=gallery
+# The sushi bar: a swiper row of the items in their item view, as on the Netgen site (gallery/sushi_bar.tpl)
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line,line_il
+ViewTypeHiddenParameters[sushi_bar]=enable_lightbox
+# The starter's slider shows two images per slide and the thumb gallery its own thumbnails, neither with a lightbox
+# (as the Netgen site, whose valid_parameters left both out for them)
+ViewTypeHiddenParameters[slider]=number_of_thumbnails,enable_lightbox
+ViewTypeHiddenParameters[thumb_gallery]=number_of_thumbnails,enable_lightbox
 
 [BlockSettings]
 AvailableBlocks[]=ezcontent_field
@@ -152,6 +250,18 @@ ViewTypes[]=image
 
 [BlockDefinition_button]
 ViewTypes[]=button_custom
+# As on the Netgen site: Netgen's own button (button/button.tpl) and the three coloured CJW buttons (drawn by
+# button/button_custom.tpl, whose class is the view type; app.css colours them)
+ViewTypes[]=button
+ViewTypes[]=button_lightblue
+ViewTypes[]=button_blue
+ViewTypes[]=button_green
+ViewTypeNames[button]=Button / Link
+ViewTypeNames[button_lightblue]=Button Hellblau
+ViewTypeNames[button_blue]=Button Blau
+ViewTypeNames[button_green]=Button Grün
+# explayouts' default: the starter draws it as button_custom, the Netgen site had none
+HiddenViewTypes[]=default
 
 # v2's ezcontent_field block: one field of the current content (the home page
 # shows its teaser_intro this way)

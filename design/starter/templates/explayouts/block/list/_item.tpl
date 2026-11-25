@@ -3,11 +3,11 @@
    Input: $item (node), $ivt (item view type), $block. Extra input for the views: $image_type (gallery_thumb).
    A block switched in the editor to a view type without an item view select (grid tiles, every gallery) keeps the
    item view it had (the editor posts the stored value), so the view types that can draw one item view only always
-   draw that one ($it_fixed: grid_tiles tile, the galleries their own, list_zigzag and list_accordion theirs); the
+   draw that one ($it_fixed: grid_tiles tile, grid_featured overlay, the galleries their own, list_zigzag and list_accordion theirs); the
    item views zigzag and accordion belong to their list view types only, any other view type draws standard. *}
 {def $it_ivt = $ivt
      $it_vt = first_set( $block.view_type, '' )
-     $it_fixed = hash( 'grid_tiles', 'tile', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
+     $it_fixed = hash( 'grid_tiles', 'tile', 'grid_featured', 'overlay', 'list_zigzag', 'zigzag', 'list_accordion', 'accordion',
                     'carousel', 'carousel', 'grid_gallery', 'gallery_grid', 'slider', 'slide', 'thumb_gallery', 'gallery_thumb',
                     'grid_gallery_fixed_height', 'gallery_grid_fixed_height', 'grid_gallery_fixed_width', 'gallery_grid_fixed_width' )}
 {if is_set( $it_fixed[$it_vt] )}
