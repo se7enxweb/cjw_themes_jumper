@@ -9,7 +9,6 @@
         <div class="sushi-swiper swiper-container"
             data-effect="slide"
             data-slides-per-view="{$sb_per_view}"
-            style="--sb-n: {$sb_per_view};"
             {if first_set( $sb_p.infinite_loop, '' )|eq( '1' )}data-loop="true"{/if}
             {if first_set( $sb_p.autoplay, '' )|eq( '1' )}data-autoplay="{first_set( $sb_p.autoplay_time, '5' )|wash}"{/if}
             {if first_set( $sb_p.thumbnails_to_move, '' )|int|gt( 0 )}data-slides-per-group="{$sb_p.thumbnails_to_move|int}"{/if}

@@ -333,7 +333,7 @@ window.addEventListener( 'load', function() {
         }
         var frame = document.createElement( 'div' );
         frame.className = 'swiper-container sushi-bar-frame';
-        frame.style.setProperty( '--sb-n', row.getAttribute( 'data-slides-per-view' ) || '6' );
+        frame.setAttribute( 'data-slides-per-view', row.getAttribute( 'data-slides-per-view' ) || '6' );
         row.parentElement.insertBefore( frame, row );
         frame.appendChild( row );
         frame.appendChild( prev );

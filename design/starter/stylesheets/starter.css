@@ -165,11 +165,25 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 .sushi-swiper .swiper-slide .vl1 .article-icon { width: 3rem; height: 3rem; }
 .sushi-swiper .swiper-slide .vl1 .title { overflow-wrap: anywhere; }
 /* The previous and next buttons sit at the middle of the image, not of the whole row. The row is a container, so
-   the width of a tile is known: (row width - 30px gap x (n - 1)) / n, n the items per view (--sb-n from the template;
+   the width of a tile is known: (row width - 30px gap x (n - 1)) / n, n the items per view (--sb-n from data-slides-per-view, below;
    nglayouts-standard.js shows at most 2 up to 991px and 1 up to 480px wide). Standard (with intro) and Overlay draw
    the image 16:9 over the whole tile, its middle 0.28125 of the tile width down; Line draws it 40% wide at 4:3 beside
    the text (middle 0.15 down) where a tile is at least 320px wide, else above the text as the others (the min/max
    picks the case: (319.98px - tile) x 1000 is large below 320px and negative from there); Line (image left) as Line. */
+/* --sb-n, the items per view, comes from the row's data-slides-per-view (the block's Thumbnails per row/slide),
+   which the page script copies onto the frame; 1 to 12 are listed, any other number keeps the default of 6. */
+.sushi-swiper[data-slides-per-view="1"], .sushi-bar-frame[data-slides-per-view="1"] { --sb-n: 1; }
+.sushi-swiper[data-slides-per-view="2"], .sushi-bar-frame[data-slides-per-view="2"] { --sb-n: 2; }
+.sushi-swiper[data-slides-per-view="3"], .sushi-bar-frame[data-slides-per-view="3"] { --sb-n: 3; }
+.sushi-swiper[data-slides-per-view="4"], .sushi-bar-frame[data-slides-per-view="4"] { --sb-n: 4; }
+.sushi-swiper[data-slides-per-view="5"], .sushi-bar-frame[data-slides-per-view="5"] { --sb-n: 5; }
+.sushi-swiper[data-slides-per-view="6"], .sushi-bar-frame[data-slides-per-view="6"] { --sb-n: 6; }
+.sushi-swiper[data-slides-per-view="7"], .sushi-bar-frame[data-slides-per-view="7"] { --sb-n: 7; }
+.sushi-swiper[data-slides-per-view="8"], .sushi-bar-frame[data-slides-per-view="8"] { --sb-n: 8; }
+.sushi-swiper[data-slides-per-view="9"], .sushi-bar-frame[data-slides-per-view="9"] { --sb-n: 9; }
+.sushi-swiper[data-slides-per-view="10"], .sushi-bar-frame[data-slides-per-view="10"] { --sb-n: 10; }
+.sushi-swiper[data-slides-per-view="11"], .sushi-bar-frame[data-slides-per-view="11"] { --sb-n: 11; }
+.sushi-swiper[data-slides-per-view="12"], .sushi-bar-frame[data-slides-per-view="12"] { --sb-n: 12; }
 .ngl-vt-sushi_bar .sushi-swiper,
 .ngl-vt-sushi_bar .sushi-bar-frame {
   container-type: inline-size;
