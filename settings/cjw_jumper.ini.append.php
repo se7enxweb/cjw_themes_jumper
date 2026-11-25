@@ -112,6 +112,7 @@ TplBlockNames[]=content_header
 TplBlockNames[]=title
 TplBlockNames[]=intro
 TplBlockNames[]=teaser_intro
+TplBlockNames[]=image
 TplBlockNames[]=content_body
 TplBlockNames[]=body
 TplBlockNames[]=menu_right

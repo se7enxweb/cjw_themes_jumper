@@ -1,6 +1,7 @@
 {* Full view of ng_frontpage (v2: cjw_app/content/full/ng_frontpage.html.twig).
-   part = 'content' (the whole view) or one of the Twig block names content_header, title, intro;
-   other names draw nothing. The page content itself comes from the layout's blocks.
+   part = 'content' (the whole view) or one of the Twig block names content_header, title, intro, or image (the
+   page's image, which the whole view does not draw: v2 placed it with a block "Content field"); other names draw
+   nothing. The page content itself comes from the layout's blocks.
    Input: node, part. *}
 {def $ff_part = first_set( $part, 'content' )
      $ff_map = $node.data_map}
@@ -31,6 +32,11 @@
                         <div class="teaser_intro">
                                 <div class="ezxmltext-field">{$ff_map.teaser_intro.content.output.output_text}</div>
                         </div>
+                    {/if}
+{/if}
+{if $ff_part|eq( 'image' )}
+                    {if and( is_set( $ff_map.image ), $ff_map.image.has_content )}
+                        <img src="{$ff_map.image.content['cjw_i1200'].url|ezroot( 'no' )}" alt="{$ff_map.image.content.alternative_text|wash}" class="ezimage-field" />
                     {/if}
 {/if}
 {if $ff_head}
