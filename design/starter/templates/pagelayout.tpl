@@ -40,6 +40,10 @@
          $pl_large_header = ezini( 'Header', 'LargeHeaderClasses', 'cjw_jumper.ini' )|contains( $pl_node.class_identifier )}
 {/if}
 
+{* The layout preview (explayouts_ui/layout_preview) has drawn the whole layout, its header and footer zones
+   included, into $module_result.content: the page layout adds no header, breadcrumb or footer around it. *}
+{def $pl_preview = and( is_set( $module_result.content_info.viewmode ), $module_result.content_info.viewmode|eq( 'layout_preview' ) )}
+
 {* A layout of this design for the full view of a node *}
 {if and( $pl_node, is_set( $module_result.content_info.viewmode ), $module_result.content_info.viewmode|eq( 'full' ) )}
     {def $pl_resolved = fetch( 'explayouts', 'resolve_layout_for_node', hash( 'node_id', $pl_node.node_id ) )}
@@ -83,7 +87,9 @@
 <body>
 
 <div id="page"{if $pl_is_landing} class="landing"{/if}>
-{if $pl_plain}
+{if $pl_preview}
+{$module_result.content}
+{elseif $pl_plain}
 {* v2's page layout without a layout (themes/cjw_app/pagelayout.html.twig, block layout): header, #main,
    pre-footer and footer directly in #page, no zones and no breadcrumb *}
 {include uri='design:pagelayout/header.tpl'}
