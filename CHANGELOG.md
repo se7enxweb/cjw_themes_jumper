@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.17 (2026-11-25)
+
+- Updated: The slider of the starter design follows its settings in the Design tab (thumbnails per slide, next and previous buttons, pagination, infinite loop, fade, autoplay and its time) instead of fixed slick settings; every slide image has one height (4:3, cut at the edges where needed) (pull request #11).
+- Added: The template block "image" draws the image of the page (field "image", alias cjw_i1200), as v2's block "Content field" did; the layout preview draws a layout of the starter design as its page does, without a second header or footer (pull request #12).
+
 ## 0.1.16 (2026-11-25)
 
 - Updated: The starter design offers each view type the item views it draws, Grid (featured), the buttons and the sushi bar of the media site reference again (pull request #10).
