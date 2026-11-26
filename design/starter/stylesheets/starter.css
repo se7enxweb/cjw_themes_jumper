@@ -279,3 +279,11 @@ footer .navbar-nav > li > a { display: inline-block; min-height: 24px; line-heig
 .ngl-vt-slider .slick-slide img.ezimage-field { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .ngl-vt-slider .slick-slide .info,
 .ngl-vt-slider .slick-slide .ezxmltext-field { margin-top: .75rem; }
+
+/* The gallery of an article (content/parts/related_multimedia.tpl): its previous button sat half its height above the
+   next one. nglayouts-standard.css moves every swiper button up by half its height (translateY(-50%)); app.css
+   replaces that with the rotation of the next button, but left it on the previous one. */
+.related-multimedia.swiper-container .swiper-button-prev { transform: none; }
+/* Its caption takes the whole width of the image: app.css left 16rem beside it for the navigation, which now sits on
+   the image (cjw_jumper_page.js) */
+.related-multimedia.swiper-container .image-wrapper figcaption { max-width: none; }

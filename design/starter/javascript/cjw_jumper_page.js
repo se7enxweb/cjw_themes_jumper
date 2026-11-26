@@ -340,3 +340,31 @@ window.addEventListener( 'load', function() {
         frame.appendChild( next );
     } );
 } );
+
+// The gallery of an article (content/parts/related_multimedia.tpl): its navigation (counter and buttons) sits on the
+// bottom of the image, not below a caption. The swiper takes the height of the slide shown (autoHeight), caption
+// included, and the navigation sits at the swiper's bottom; so it is lifted by what of the slide lies below the image,
+// whenever another slide is shown, an image has loaded (lazy) or the size changes. A slide without an image (a video)
+// lifts nothing.
+window.addEventListener( 'load', function() {
+    Array.prototype.forEach.call( document.querySelectorAll( '.related-multimedia.swiper-container' ), function( gallery ) {
+        var nav = gallery.querySelector( ':scope > .swiper-navigation' );
+        var swiper = gallery.swiper;
+        if ( !nav || !swiper ) {
+            return;
+        }
+        var place = function() {
+            var slide = swiper.slides && swiper.slides[ swiper.activeIndex ];
+            var image = slide ? slide.querySelector( 'figure img' ) : null;
+            var below = 0;
+            if ( image && image.getBoundingClientRect().height > 0 ) {
+                below = Math.max( 0, Math.round( gallery.getBoundingClientRect().bottom - image.getBoundingClientRect().bottom ) );
+            }
+            nav.style.bottom = below + 'px';
+        };
+        [ 'slideChange', 'slideChangeTransitionEnd', 'lazyImageReady', 'resize' ].forEach( function( event ) {
+            swiper.on( event, function() { window.requestAnimationFrame( place ); } );
+        } );
+        place();
+    } );
+} );
