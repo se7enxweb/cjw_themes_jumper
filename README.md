@@ -54,6 +54,7 @@ doc/                                   notes on the design
 
 - Exponential 6 (the legacy kernel with the `standard` design), PHP 8.0 or later.
 - `explayouts` (Exponential Layouts) and `ezjscore` (jQuery 4 and jQuery Migrate 4.0.2) for the pages and blocks;
+  explayouts 1.4.53 or later (its slider settings operator for the gallery slider);
   explayouts 1.4.51 or later (`explayouts_ui_api` 1.3.37, `explayouts_ui` 1.3.34) for the item view types of the
   starter settings. An older explayouts draws the same pages but offers only the item views of its block handlers.
 - The PHP extension `imagick` for the `cjw_*` image aliases.
